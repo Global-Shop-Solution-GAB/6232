@@ -1,0 +1,2023 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_PanelID..Create(BaseForm)
+Gui.f_PanelID..Caption("Panel ID (6232)")
+Gui.f_PanelID..Size(249,119)
+Gui.f_PanelID..MinX(0)
+Gui.f_PanelID..MinY(0)
+Gui.f_PanelID..Position(300,500)
+Gui.f_PanelID..AlwaysOnTop(True)
+Gui.f_PanelID..FontName("Tahoma")
+Gui.f_PanelID..FontSize(8.25)
+Gui.f_PanelID..ControlBox(True)
+Gui.f_PanelID..MaxButton(False)
+Gui.f_PanelID..MinButton(True)
+Gui.f_PanelID..MousePointer(0)
+Gui.f_PanelID..Moveable(True)
+Gui.f_PanelID..Sizeable(False)
+Gui.f_PanelID..ShowInTaskBar(True)
+Gui.f_PanelID..TitleBar(True)
+Gui.f_PanelID..ShowCompanyCode(False)
+Gui.f_PanelID..Event(UnLoad,Unload)
+Gui.f_PanelID.lblScan.Create(Label,"Scan Panel ID:",True,125,23,0,59,11,True,0,"Tahoma",14,,0,0)
+Gui.f_PanelID.lblScan.BorderStyle(0)
+Gui.f_PanelID.txtPanelId.Create(TextBox,"",True,169,18,0,37,39,True,0,"Tahoma",7.8,,1)
+Gui.f_PanelID.txtPanelId.Event(KeyPressEnter,txtPanelId_KeyPressEnter)
+Gui.f_Scan_Screen..Create(BaseForm)
+Gui.f_Scan_Screen..Caption("Panel Scanning Check-In (6232)")
+Gui.f_Scan_Screen..Size(1103,581)
+Gui.f_Scan_Screen..MinX(0)
+Gui.f_Scan_Screen..MinY(0)
+Gui.f_Scan_Screen..Position(0,0)
+Gui.f_Scan_Screen..AlwaysOnTop(False)
+Gui.f_Scan_Screen..FontName("Tahoma")
+Gui.f_Scan_Screen..FontSize(8.25)
+Gui.f_Scan_Screen..ControlBox(True)
+Gui.f_Scan_Screen..MaxButton(True)
+Gui.f_Scan_Screen..MinButton(True)
+Gui.f_Scan_Screen..MousePointer(0)
+Gui.f_Scan_Screen..Moveable(True)
+Gui.f_Scan_Screen..Sizeable(False)
+Gui.f_Scan_Screen..ShowInTaskBar(True)
+Gui.f_Scan_Screen..TitleBar(True)
+Gui.f_Scan_Screen..Event(UnLoad,Unload)
+Gui.f_Scan_Screen.lblPanelId.Create(Label,"Panel ID:",True,52,16,0,208,6,True,0,"Tahoma",10,,0,0)
+Gui.f_Scan_Screen.lblPanelId.BorderStyle(0)
+Gui.f_Scan_Screen.txtPanelID.Create(TextBox,"",True,94,18,0,208,27,True,0,"Tahoma",7.8,,1)
+Gui.f_Scan_Screen.txtPanelID.Locked(True)
+Gui.f_Scan_Screen.lblFinish.Create(Label,"Finish:",True,38,16,0,316,6,True,0,"Tahoma",10,,0,0)
+Gui.f_Scan_Screen.lblFinish.BorderStyle(0)
+Gui.f_Scan_Screen.txtFinish.Create(TextBox,"",True,163,18,0,316,27,True,0,"Tahoma",7.8,,1)
+Gui.f_Scan_Screen.txtFinish.Locked(True)
+Gui.f_Scan_Screen.GsGCScans.Create(GsGridControl)
+Gui.f_Scan_Screen.GsGCScans.Enabled(True)
+Gui.f_Scan_Screen.GsGCScans.Visible(True)
+Gui.f_Scan_Screen.GsGCScans.Zorder(0)
+Gui.f_Scan_Screen.GsGCScans.Size(1103,489)
+Gui.f_Scan_Screen.GsGCScans.Position(0,62)
+Gui.f_Scan_Screen.GsGCScans.Dock(2)
+Gui.f_Scan_Screen.GsGCScans.Anchor(15)
+Gui.f_Scan_Screen.GsGCScans.Event(CellValueChanged,GsGCScans_CellValueChanged)
+Gui.f_Scan_Screen.cmdLoadScans.Create(Button)
+Gui.f_Scan_Screen.cmdLoadScans.Enabled(True)
+Gui.f_Scan_Screen.cmdLoadScans.Visible(True)
+Gui.f_Scan_Screen.cmdLoadScans.Zorder(0)
+Gui.f_Scan_Screen.cmdLoadScans.Size(102,22)
+Gui.f_Scan_Screen.cmdLoadScans.Position(992,25)
+Gui.f_Scan_Screen.cmdLoadScans.Caption("Load Scans")
+Gui.f_Scan_Screen.cmdLoadScans.FontName("Tahoma")
+Gui.f_Scan_Screen.cmdLoadScans.FontSize(10)
+Gui.f_Scan_Screen.cmdLoadScans.Anchor(9)
+Gui.f_Scan_Screen.cmdLoadScans.Event(Click,cmdLoadScans_Click)
+Gui.f_Scan_Screen.lblJob.Create(Label,"Work Order:",True,72,16,0,8,6,True,0,"Tahoma",10,,0,0)
+Gui.f_Scan_Screen.lblJob.BorderStyle(0)
+Gui.f_Scan_Screen.txtJob.Create(TextBox,"",True,100,20,0,8,26,True,0,"Tahoma",8.25,,1)
+Gui.f_Scan_Screen.txtJob.Locked(True)
+Gui.f_Scan_Screen.lblSeq.Create(Label,"Sequence:",True,61,16,0,122,6,True,0,"Tahoma",10,,0,0)
+Gui.f_Scan_Screen.lblSeq.BorderStyle(0)
+Gui.f_Scan_Screen.txtSeq.Create(TextBox,"",True,72,20,0,122,26,True,0,"Tahoma",8.25,,1)
+Gui.f_Scan_Screen.txtSeq.Locked(True)
+Gui.f_Crate..Create(BaseForm)
+Gui.f_Crate..Caption("Shipping Crates (6232)")
+Gui.f_Crate..Size(541,405)
+Gui.f_Crate..MinX(0)
+Gui.f_Crate..MinY(0)
+Gui.f_Crate..Position(0,0)
+Gui.f_Crate..AlwaysOnTop(False)
+Gui.f_Crate..FontName("Tahoma")
+Gui.f_Crate..FontSize(8.25)
+Gui.f_Crate..ControlBox(True)
+Gui.f_Crate..MaxButton(False)
+Gui.f_Crate..MinButton(True)
+Gui.f_Crate..MousePointer(0)
+Gui.f_Crate..Moveable(True)
+Gui.f_Crate..Sizeable(False)
+Gui.f_Crate..ShowInTaskBar(True)
+Gui.f_Crate..TitleBar(True)
+Gui.f_Crate..Event(UnLoad,Unload)
+Gui.f_Crate.lblJob.Create(Label,"Work Order:",True,72,16,0,7,5,True,0,"Tahoma",10,,0,0)
+Gui.f_Crate.lblJob.BorderStyle(0)
+Gui.f_Crate.txtJob.Create(TextBox,"",True,106,20,0,7,26,True,0,"Tahoma",8.25,,1)
+Gui.f_Crate.txtJob.Locked(True)
+Gui.f_Crate.cmdNewCrate.Create(Button)
+Gui.f_Crate.cmdNewCrate.Enabled(True)
+Gui.f_Crate.cmdNewCrate.Visible(True)
+Gui.f_Crate.cmdNewCrate.Zorder(0)
+Gui.f_Crate.cmdNewCrate.Size(80,23)
+Gui.f_Crate.cmdNewCrate.Position(119,24)
+Gui.f_Crate.cmdNewCrate.Caption("New Crate")
+Gui.f_Crate.cmdNewCrate.FontName("Tahoma")
+Gui.f_Crate.cmdNewCrate.FontSize(8.25)
+Gui.f_Crate.cmdNewCrate.Event(Click,cmdNewCrate_Click)
+Gui.f_Crate.cmdExCrate.Create(Button)
+Gui.f_Crate.cmdExCrate.Enabled(True)
+Gui.f_Crate.cmdExCrate.Visible(True)
+Gui.f_Crate.cmdExCrate.Zorder(0)
+Gui.f_Crate.cmdExCrate.Size(80,23)
+Gui.f_Crate.cmdExCrate.Position(206,24)
+Gui.f_Crate.cmdExCrate.Caption("Existing Crate")
+Gui.f_Crate.cmdExCrate.FontName("Tahoma")
+Gui.f_Crate.cmdExCrate.FontSize(8.25)
+Gui.f_Crate.cmdExCrate.Event(Click,cmdExCrate_Click)
+Gui.f_Crate.ddlCrates.Create(DropDownList)
+Gui.f_Crate.ddlCrates.Enabled(True)
+Gui.f_Crate.ddlCrates.Visible(False)
+Gui.f_Crate.ddlCrates.Zorder(0)
+Gui.f_Crate.ddlCrates.Size(91,20)
+Gui.f_Crate.ddlCrates.Position(444,77)
+Gui.f_Crate.ddlCrates.FontName("Tahoma")
+Gui.f_Crate.ddlCrates.FontSize(8.25)
+Gui.f_Crate.ddlCrates.Event(Change,ddlCrates_Change)
+Gui.f_Crate.lblCrates.Create(Label,"Current Crate:",False,83,16,0,450,58,True,0,"Tahoma",10,,0,0)
+Gui.f_Crate.lblCrates.BorderStyle(0)
+Gui.f_Crate.GsGcCrates.Create(GsGridControl)
+Gui.f_Crate.GsGcCrates.Enabled(True)
+Gui.f_Crate.GsGcCrates.Visible(True)
+Gui.f_Crate.GsGcCrates.Zorder(0)
+Gui.f_Crate.GsGcCrates.Size(528,266)
+Gui.f_Crate.GsGcCrates.Position(7,107)
+Gui.f_Crate.GsGcCrates.Dock(0)
+Gui.f_Crate.GsGcCrates.Anchor(3)
+Gui.f_Crate.GsGCTransfer.Create(GsGridControl)
+Gui.f_Crate.GsGCTransfer.Enabled(True)
+Gui.f_Crate.GsGCTransfer.Visible(False)
+Gui.f_Crate.GsGCTransfer.Zorder(0)
+Gui.f_Crate.GsGCTransfer.Size(528,266)
+Gui.f_Crate.GsGCTransfer.Position(7,432)
+Gui.f_Crate.GsGCTransfer.Dock(0)
+Gui.f_Crate.GsGCTransfer.Anchor(11)
+Gui.f_Crate.lblPanel.Create(Label,"Panel ID:",True,52,16,0,7,56,True,0,"Tahoma",10,,0,0)
+Gui.f_Crate.lblPanel.BorderStyle(0)
+Gui.f_Crate.txtPanel.Create(TextBox,"",True,105,20,0,7,77,False,0,"Tahoma",8.25,,1)
+Gui.f_Crate.txtPanel.TabStop(True)
+Gui.f_Crate.txtPanel.TabIndex(1)
+Gui.f_Crate.txtPanel.Event(KeyPressEnter,txtPanel_KeyPressEnter)
+Gui.f_Crate.lblTransfer.Create(Label,"Transfer Crate:",False,89,16,0,444,381,True,0,"Tahoma",10,,0,0)
+Gui.f_Crate.lblTransfer.BorderStyle(0)
+Gui.f_Crate.ddlTransfer.Create(DropDownList)
+Gui.f_Crate.ddlTransfer.Enabled(True)
+Gui.f_Crate.ddlTransfer.Visible(False)
+Gui.f_Crate.ddlTransfer.Zorder(0)
+Gui.f_Crate.ddlTransfer.Size(91,20)
+Gui.f_Crate.ddlTransfer.Position(444,400)
+Gui.f_Crate.ddlTransfer.FontName("Tahoma")
+Gui.f_Crate.ddlTransfer.FontSize(8.25)
+Gui.f_Crate.ddlTransfer.Event(Change,ddlTransfer_Change)
+Gui.f_Crate.cmdDown.Create(Button)
+Gui.f_Crate.cmdDown.Enabled(True)
+Gui.f_Crate.cmdDown.Visible(False)
+Gui.f_Crate.cmdDown.Zorder(0)
+Gui.f_Crate.cmdDown.Size(27,23)
+Gui.f_Crate.cmdDown.Position(7,396)
+Gui.f_Crate.cmdDown.Caption("▼")
+Gui.f_Crate.cmdDown.FontName("Tahoma")
+Gui.f_Crate.cmdDown.FontSize(8.25)
+Gui.f_Crate.cmdDown.Anchor(3)
+Gui.f_Crate.cmdDown.Event(Click,cmdDown_Click)
+Gui.f_Crate.cmdUp.Create(Button)
+Gui.f_Crate.cmdUp.Enabled(True)
+Gui.f_Crate.cmdUp.Visible(False)
+Gui.f_Crate.cmdUp.Zorder(0)
+Gui.f_Crate.cmdUp.Size(27,23)
+Gui.f_Crate.cmdUp.Position(49,396)
+Gui.f_Crate.cmdUp.Caption("▲")
+Gui.f_Crate.cmdUp.FontName("Tahoma")
+Gui.f_Crate.cmdUp.FontSize(8.25)
+Gui.f_Crate.cmdUp.Anchor(3)
+Gui.f_Crate.cmdUp.Event(Click,cmdUp_Click)
+Gui.f_Crate.cmdPckingList.Create(Button)
+Gui.f_Crate.cmdPckingList.Enabled(True)
+Gui.f_Crate.cmdPckingList.Visible(True)
+Gui.f_Crate.cmdPckingList.Zorder(0)
+Gui.f_Crate.cmdPckingList.Size(80,23)
+Gui.f_Crate.cmdPckingList.Position(293,24)
+Gui.f_Crate.cmdPckingList.Caption("Packing List")
+Gui.f_Crate.cmdPckingList.FontName("Tahoma")
+Gui.f_Crate.cmdPckingList.FontSize(8.25)
+Gui.f_Crate.cmdPckingList.Anchor(9)
+Gui.f_Crate.cmdPckingList.Event(Click,cmdPckingList_Click)
+Gui.f_Crate.cmdRemovePnl1.Create(Button)
+Gui.f_Crate.cmdRemovePnl1.Enabled(True)
+Gui.f_Crate.cmdRemovePnl1.Visible(False)
+Gui.f_Crate.cmdRemovePnl1.Zorder(0)
+Gui.f_Crate.cmdRemovePnl1.Size(84,23)
+Gui.f_Crate.cmdRemovePnl1.Position(354,76)
+Gui.f_Crate.cmdRemovePnl1.Caption("Remove Panel")
+Gui.f_Crate.cmdRemovePnl1.FontName("Tahoma")
+Gui.f_Crate.cmdRemovePnl1.FontSize(8.25)
+Gui.f_Crate.cmdRemovePnl1.Event(Click,cmdRemovePnl1_Click)
+Gui.f_Crate.cmdRemovePnl2.Create(Button)
+Gui.f_Crate.cmdRemovePnl2.Enabled(True)
+Gui.f_Crate.cmdRemovePnl2.Visible(False)
+Gui.f_Crate.cmdRemovePnl2.Zorder(0)
+Gui.f_Crate.cmdRemovePnl2.Size(84,23)
+Gui.f_Crate.cmdRemovePnl2.Position(352,398)
+Gui.f_Crate.cmdRemovePnl2.Caption("Remove Panel")
+Gui.f_Crate.cmdRemovePnl2.FontName("Tahoma")
+Gui.f_Crate.cmdRemovePnl2.FontSize(8.25)
+Gui.f_Crate.cmdRemovePnl2.Event(Click,cmdRemovePnl2_Click)
+Gui.f_Pcking_Crate..Create(BaseForm)
+Gui.f_Pcking_Crate..Caption("Crates")
+Gui.f_Pcking_Crate..Size(204,255)
+Gui.f_Pcking_Crate..MinX(0)
+Gui.f_Pcking_Crate..MinY(0)
+Gui.f_Pcking_Crate..Position(0,0)
+Gui.f_Pcking_Crate..AlwaysOnTop(False)
+Gui.f_Pcking_Crate..FontName("Tahoma")
+Gui.f_Pcking_Crate..FontSize(8.25)
+Gui.f_Pcking_Crate..ControlBox(True)
+Gui.f_Pcking_Crate..MaxButton(False)
+Gui.f_Pcking_Crate..MinButton(True)
+Gui.f_Pcking_Crate..MousePointer(0)
+Gui.f_Pcking_Crate..Moveable(True)
+Gui.f_Pcking_Crate..Sizeable(False)
+Gui.f_Pcking_Crate..ShowInTaskBar(True)
+Gui.f_Pcking_Crate..TitleBar(True)
+Gui.f_Pcking_Crate..Event(UnLoad,f_Pcking_Crate_UnLoad)
+Gui.f_Pcking_Crate.lblCrates.Create(Label,"Select Crates to Ship:",True,104,13,0,8,10,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Pcking_Crate.lblCrates.BorderStyle(0)
+Gui.f_Pcking_Crate.GsGcCrates.Create(GsGridControl)
+Gui.f_Pcking_Crate.GsGcCrates.Enabled(True)
+Gui.f_Pcking_Crate.GsGcCrates.Visible(True)
+Gui.f_Pcking_Crate.GsGcCrates.Zorder(0)
+Gui.f_Pcking_Crate.GsGcCrates.Size(204,159)
+Gui.f_Pcking_Crate.GsGcCrates.Position(0,66)
+Gui.f_Pcking_Crate.GsGcCrates.Anchor(15)
+Gui.f_Pcking_Crate.GsGcCrates.Dock(2)
+Gui.f_Pcking_Crate.cmdShip.Create(Button)
+Gui.f_Pcking_Crate.cmdShip.Enabled(True)
+Gui.f_Pcking_Crate.cmdShip.Visible(True)
+Gui.f_Pcking_Crate.cmdShip.Zorder(0)
+Gui.f_Pcking_Crate.cmdShip.Size(45,23)
+Gui.f_Pcking_Crate.cmdShip.Position(151,5)
+Gui.f_Pcking_Crate.cmdShip.Caption("Ship")
+Gui.f_Pcking_Crate.cmdShip.FontName("Tahoma")
+Gui.f_Pcking_Crate.cmdShip.FontSize(8.25)
+Gui.f_Pcking_Crate.cmdShip.Event(Click,cmdShip_Click)
+Gui.f_Pcking_Crate.lblNextShip.Create(Label,"Next Shipment ID:",True,88,13,0,8,40,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Pcking_Crate.lblNextShip.BorderStyle(0)
+Gui.f_Pcking_Crate.txtNextShip.Create(TextBox,"",True,48,20,0,150,36,True,0,"Tahoma",8.25,,1)
+Gui.f_Pcking_Crate.txtNextShip.Locked(True)
+Gui.f_Pcking_Crate.txtNextShip.NumericOnly(2)
+Gui.f_Print..Create(BaseForm)
+Gui.f_Print..Caption("Print Packing List")
+Gui.f_Print..Size(237,118)
+Gui.f_Print..MinX(0)
+Gui.f_Print..MinY(0)
+Gui.f_Print..Position(0,0)
+Gui.f_Print..AlwaysOnTop(False)
+Gui.f_Print..FontName("Tahoma")
+Gui.f_Print..FontSize(8.25)
+Gui.f_Print..ControlBox(True)
+Gui.f_Print..MaxButton(False)
+Gui.f_Print..MinButton(True)
+Gui.f_Print..MousePointer(0)
+Gui.f_Print..Moveable(True)
+Gui.f_Print..Sizeable(False)
+Gui.f_Print..ShowInTaskBar(True)
+Gui.f_Print..TitleBar(True)
+Gui.f_Print..Event(UnLoad,Unload)
+Gui.f_Print..ShowCompanyCode(False)
+Gui.f_Print.lblShipID.Create(Label,"Shipment ID:",True,62,13,0,6,6,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Print.lblShipID.BorderStyle(0)
+Gui.f_Print.txtShipID.Create(TextBox,"",True,100,20,0,6,24,True,0,"Tahoma",8.25,,1)
+Gui.f_Print.lblShipDate.Create(Label,"Shipment Date:",True,74,13,0,126,6,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Print.lblShipDate.BorderStyle(0)
+Gui.f_Print.dtpShipDate.Create(DatePicker)
+Gui.f_Print.dtpShipDate.Enabled(True)
+Gui.f_Print.dtpShipDate.Visible(True)
+Gui.f_Print.dtpShipDate.Zorder(0)
+Gui.f_Print.dtpShipDate.Size(100,20)
+Gui.f_Print.dtpShipDate.Position(126,24)
+Gui.f_Print.dtpShipDate.CheckBox(False)
+Gui.f_Print.dtpShipDate.FontName("Tahoma")
+Gui.f_Print.dtpShipDate.FontSize(8.25)
+Gui.f_Print.cmdPrint.Create(Button)
+Gui.f_Print.cmdPrint.Enabled(True)
+Gui.f_Print.cmdPrint.Visible(True)
+Gui.f_Print.cmdPrint.Zorder(0)
+Gui.f_Print.cmdPrint.Size(75,23)
+Gui.f_Print.cmdPrint.Position(151,52)
+Gui.f_Print.cmdPrint.Caption("Print")
+Gui.f_Print.cmdPrint.FontName("Tahoma")
+Gui.f_Print.cmdPrint.FontSize(8.25)
+Gui.f_Print.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.f_Print.cmdCancel.Create(Button)
+Gui.f_Print.cmdCancel.Enabled(True)
+Gui.f_Print.cmdCancel.Visible(True)
+Gui.f_Print.cmdCancel.Zorder(0)
+Gui.f_Print.cmdCancel.Size(75,23)
+Gui.f_Print.cmdCancel.Position(6,52)
+Gui.f_Print.cmdCancel.Caption("Cancel")
+Gui.f_Print.cmdCancel.FontName("Tahoma")
+Gui.f_Print.cmdCancel.FontSize(8.25)
+Gui.f_Print.cmdCancel.Event(Click,cmdCancel_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bError.Declare(Boolean)
+V.Global.bUnattended.Declare(Boolean)
+V.Global.bDataLoaded.Declare(Boolean, False)
+V.Global.fGoodPcs.Declare(Float, 0.00)
+V.Global.fScrapPcs.Declare(Float,0.00)
+V.Global.sJob.Declare(String)
+V.Global.sSuffix.Declare(String)
+V.Global.sSeq.Declare(String)
+V.Global.sOpCode.Declare(String)
+V.Global.sWC.Declare(String)
+V.Global.sPanelID.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+V.Local.sWO.Declare(String)
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+'open the connection to the db
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+
+'check the hook that is firing
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+'Update Jobs Populate Hook
+F.Intrinsic.Control.Case(50600)
+	'set the script 3 button on the update job screen
+	V.Passed.UpdateJobsView-Script3-1.Set("Panel Scan")
+	F.Intrinsic.Control.CallSub(Unload)
+'Script 3 Hook - in Update Jobs Screen SFDC
+F.Intrinsic.Control.Case(50612)
+
+
+	F.Intrinsic.Control.CallSub(WOGridBDF)	
+'	F.Intrinsic.Control.CallSub(Unload)
+'if any other hook, call the unload subroutine to end the program
+F.Intrinsic.Control.CaseElse
+'menu item to print the packing list
+	Gui.f_Print..Show
+
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.WOGridBDF.Start
+F.Intrinsic.Control.Try
+V.Local.iRowCnt.Declare(String)
+V.Local.sGrid.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sOpCode.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sWC.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sShipWO.Declare(String)
+
+
+'load the information from the grid
+F.Intrinsic.BDF.Load("UpdateJobsView-gvWOOperations-bdf", "UpdateJobsView-gvWOOperations-bdf")
+F.Intrinsic.BDF.Clone("UpdateJobsView-gvWOOperations-bdf", "TempBDF")
+F.Intrinsic.BDF.ReadRowCount("UpdateJobsView-gvWOOperations-bdf", V.Local.iRowCnt)
+F.Intrinsic.Math.Sub(V.Local.iRowCnt,1,V.Local.iRowCnt)
+F.Intrinsic.BDF.ReadRow("UpdateJobsView-gvWOOperations-bdf", V.Local.iRowCnt, V.Local.sGrid)
+
+F.Intrinsic.String.Split(V.Local.sGrid, "|~|", V.Local.sGrid)
+V.Local.sWO.Set(V.Local.sGrid(0).Trim)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Global.sJob.Set(V.Local.sWO(0).Trim)
+V.Global.sSuffix.Set(V.Local.sWO(1).Trim)
+V.Global.sSeq.Set(V.Local.sGrid(1).Trim)
+V.Global.sWC.Set(V.Local.sGrid(2).Trim)
+V.Global.fGoodPcs.Set(V.Local.sGrid(3).Float)
+
+F.Intrinsic.String.Build("SELECT OPERATION, PART FROM V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQ = '{2}' AND LMO = 'L'", V.Global.sJob.Trim, V.Global.sSuffix.Trim, V.Global.sSeq.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*", V.Local.sRet)
+	V.Local.sOpCode.Set(V.Local.sRet(0).Trim)
+	V.Global.sOpCode.Set(V.Local.sRet(0).Trim)
+	V.Local.sWC.Set(V.Local.sRet(1).Trim)
+	
+	'show the check-in scanning screen
+	F.Intrinsic.Control.If(V.Local.sOpCode.Trim,=,"SCAN")
+		Gui.f_PanelID..Size(261,103)
+		Gui.f_PanelID..Show
+		
+	'Show the crating screen
+	F.Intrinsic.Control.ElseIf(V.Local.sOpCode.Trim,=, "SHIP")
+		
+		F.Intrinsic.String.Build("{0}-{1}", V.Global.sJob.Trim, V.Global.sSuffix.Trim, V.Local.sShipWO)
+		Gui.f_Crate.txtJob.Text(V.Local.sShipWO.Trim)
+		F.Intrinsic.Control.CallSub(LoadCrateGrid)
+		Gui.f_Crate..Show
+	F.Intrinsic.Control.Else
+		'For testing
+'		Gui.f_PanelID..Show
+	'	F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.WOGridBDF.End
+
+Program.Sub.txtPanelId_KeyPressEnter.Start
+F.Intrinsic.Control.Try
+V.Local.sPanelID.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sWO.Declare(String)
+
+V.Local.sPanelID.Set(V.Screen.f_PanelID!txtPanelId.Text)
+F.Intrinsic.String.UCase(V.Local.sPanelID, V.Local.sPanelID)
+
+F.Intrinsic.String.UCase(V.Local.sPanelID, V.Global.sPanelID)
+F.Intrinsic.Control.If(V.Local.sPanelID.trim,<>,"")
+	F.Intrinsic.String.Build("SELECT DISTINCT FINISH FROM GCG_6232_PANEL_INFO WHERE PNL = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' ", V.Local.sPanelID.Trim, V.Global.sJob.Trim, V.Global.sSuffix.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		'build the work order number for the text box
+		F.Intrinsic.String.Build("{0}-{1}", V.Global.sJob.Trim, V.Global.sSuffix.Trim, V.Local.sWO)
+		'set the WO number textbox
+		Gui.f_Scan_Screen.txtJob.Text(V.Local.sWO.Trim)
+		'set the Sequence textbox
+		Gui.f_Scan_Screen.txtSeq.Text(V.Global.sSeq.Trim)
+		'set the panel id textbox to be the panel that was scanned
+		Gui.f_Scan_Screen.txtPanelID.Text(V.Local.sPanelID.Trim)
+		'set the finish textbox to match the finish for the scanned panel
+		Gui.f_Scan_Screen.txtFinish.Text(V.Local.sRet.Trim)
+		F.Intrinsic.Control.If(V.DataTable.dtPrevScans.Exists)
+			F.Intrinsic.Control.BlockEvents
+			F.Data.DataTable.DeleteRow("dtPrevScans")
+			F.Intrinsic.Control.UnBlockEvents
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.CallSub(SaveScan)
+		Gui.f_Scan_Screen..Visible(True)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("The Finish for the scanned Panel has not been Imported. Please try again after the Panel Import is complete", "Missing Information")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Error scanning Panel ID. Please scan again.", "Invalid Scan")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+ Gui.f_PanelID.txtPanelId.Text("")
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.txtPanelId_KeyPressEnter.End
+
+Program.Sub.cmdLoadScans_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sPanel.Declare(String)
+V.Local.sSQL.Declare(String)
+
+V.Local.sPanel.Set(V.Global.sPanelID.Trim)
+
+F.Intrinsic.String.Build("SELECT A.JOB, A.SUFFIX, A.SEQUENCE, RTRIM(LTRIM(B. PART)) AS PART, A.PNL_ID, A.FINISH, A.STATUS, A.PNL_ACTION,  A.QTY, B.UNITS_OPEN, A.SCAN_ID, A.DATE_SCANNED, A.TIME_SCANNED FROM GCG_6232_PNL_SCANS A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.SEQUENCE = B.SEQ WHERE A.JOB = '{0}' AND A.SUFFIX = '{1}' AND A.PNL_ID = '{2}' ORDER BY A.SEQUENCE, A.SCAN_ID", V.Global.sJob.Trim, V.Global.sSuffix.Trim, v.Local.sPanel.Trim ,V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.DataTable.dtPrevScans.Exists)
+	F.Data.DataTable.Close("dtPrevScans")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtPrevScans", "con", V.Local.sSQL, True)
+
+
+F.Intrinsic.Control.BlockEvents
+F.Intrinsic.Control.CallSub(FormatGrid)
+F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdLoadScans_Click.End
+
+Program.Sub.FormatGrid.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.iColumnIndex.Declare(Long)
+V.Local.sDefault.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sNewValue.Declare(String)
+V.Local.sValues.Declare(String)
+V.Local.sSQL.Declare(String)
+
+Gui.f_Scan_Screen.GsGCScans.AddGridviewFromDatatable("gvPrevScans", "dtPrevScans")
+V.Local.sGV.Set("gvPrevScans")
+
+Gui.f_Scan_Screen.GsGCScans.SetGridviewProperty(V.Local.sGV, "AllowColumnResizing", True)
+Gui.f_Scan_Screen.GsGCScans.SetGridviewProperty(V.Local.sGV, "AllowColumnMoving", False)
+Gui.f_Scan_Screen.GsGCScans.SetGridviewProperty(V.Local.sGV, "Showgrouppanel", False)
+Gui.f_Scan_Screen.GsGCScans.SetGridviewProperty(V.Local.sGV, "AllowAddRows", False)
+Gui.f_Scan_Screen.GsGCScans.SetGridviewProperty(V.Local.sGV, "AllowDeleteRows", False)
+Gui.f_Scan_Screen.GsGCScans.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+Gui.f_Scan_Screen.GsGCScans.SetGridviewProperty(V.Local.sGV, "MultiSelect", False)
+
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SCAN_ID", "Visible", False)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "DATE_SCANNED", "Visible", False)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "TIME_SCANNED", "Visible", False)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, "Job")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, "Suffix")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, "Sequence")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PART", V.Local.sProperty, "WC")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, "Panel ID")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, "Finish")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, "Qty")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "UNITS_OPEN", v.Local.sProperty, "Qty Expected")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "STATUS", V.Local.sProperty, "Status")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ACTION", V.Local.sProperty, "Action")
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PART", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "UNITS_OPEN", v.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "STATUS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ACTION", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PART", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "UNITS_OPEN", v.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "STATUS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ACTION", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PART", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "UNITS_OPEN", v.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "STATUS", V.Local.sProperty, False)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ACTION", V.Local.sProperty, False)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PART", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "UNITS_OPEN", v.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "STATUS", V.Local.sProperty, True)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ACTION", V.Local.sProperty, True)
+
+V.Local.sProperty.Set("MinWidth")
+V.Local.sDefault.Set(75)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PART", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, 150)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, 100)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "UNITS_OPEN", v.Local.sProperty, 100)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "STATUS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Scan_Screen.GsGCScans.SetColumnProperty(V.Local.sGV, "PNL_ACTION", V.Local.sProperty, 200)
+
+F.ODBC.Connection!con.ExecuteAndReturn("SELECT DESCR FROM REJECTED_CODE ORDER BY CODE", V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet, "#$#", V.Local.sRet)
+F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRet.LBound, V.Local.sRet.UBound, 1)
+	F.Intrinsic.Control.If(V.Local.iCnt,=,0)
+		V.Local.sValues.Set(V.Local.sRet(V.Local.iCnt).Trim)
+	F.Intrinsic.Control.Else
+		V.Local.sNewValue.Set(V.Local.sRet(V.Local.iCnt).Trim)
+		F.Intrinsic.String.Build("{0}*!*{1}", V.Local.sValues, V.Local.sNewValue, V.Local.sValues)
+		
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+Gui.f_Scan_Screen.GsGCScans.ColumnEdit(V.Local.sGV, "PNL_ACTION", "Dropdownlist", V.Local.sValues)
+
+F.Intrinsic.String.Build("PASS*!*FAIL", V.Local.sValues, V.Local.sNewValue, V.Local.sValues)
+Gui.f_Scan_Screen.GsGCScans.ColumnEdit(V.Local.sGV, "STATUS", "DropDownList", V.Local.sValues)
+
+F.Intrinsic.Control.For(V.Local.iCnt,0, V.DataTable.dtPrevScans.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtPrevScans(V.Local.iCnt).SEQUENCE!FieldValTrim,<>,V.Global.sSeq.Trim)
+		Gui.f_Scan_Screen.GsGCScans.GetColumnIndexByName(V.Local.sGV, "PNL_ACTION", V.Local.iColumnIndex)
+		Gui.f_Scan_Screen.GsGCScans.SetCellProperty(V.Local.sGV, V.Local.iColumnIndex, v.Local.iCnt, "locked", True)
+		
+		Gui.f_Scan_Screen.GsGCScans.GetColumnIndexByName(V.Local.sGV, "STATUS", V.Local.iColumnIndex)
+		Gui.f_Scan_Screen.GsGCScans.SetCellProperty(V.Local.sGV, V.Local.iColumnIndex, v.Local.iCnt, "locked", True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+Gui.f_Scan_Screen.GsGCScans.AddSummaryItem(V.Local.sGV, "QTY", "TOTAL_QTY", "Sum", "Total Qty Scanned: ", "", "n0")
+Gui.f_Scan_Screen.GsGCScans.AddSummaryItem(V.Local.sGV, "UNITS_OPEN", "TOTAL_EXP_QTY", "Average", "Total Expected Qty: ", "", "n0")
+
+Gui.f_Scan_Screen.GsGCScans.ResumeLayout
+Gui.f_Scan_Screen.GsGCScans.MainView("gvPrevScans")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatGrid.End
+
+Program.Sub.SaveScan.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(String)
+V.Local.iOpsCnt.Declare(String)
+V.Local.iRet.Declare(String)
+V.Local.iScanID.Declare(String)
+V.Local.fQty.Declare(Float)
+v.Local.fPrevScannedQty.Declare(Float)
+V.Local.sFinish.Declare(String)
+V.Local.sPanelID.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sStatus.Declare(String)
+V.Local.sOps.Declare(String)
+V.Local.sScanId.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sTime.Declare(String)
+
+F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+V.Local.sPanelID.Set(V.Screen.f_Scan_Screen!txtPanelID.Text)
+F.Intrinsic.String.UCase(V.Local.sPanelID, V.Local.sPanelID)
+V.Local.sFinish.Set(V.Screen.f_Scan_Screen!txtFinish.Text)
+V.Local.sStatus.Set("PASS")
+
+'F.Intrinsic.String.Build("SELECT SEQ FROM V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND OPERATION IN ('SCAN') AND LMO = 'L' AND SEQ < '900000' ", V.Global.sJob.Trim, V.Global.sSuffix.Trim, V.Local.sSQL)
+'F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+'F.Intrinsic.Control.If(v.Local.sRet,<>,"")
+'	F.Intrinsic.String.Split(V.Local.sRet, "#$#", V.Local.sOps)
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.For(V.Local.iOpsCnt, V.Local.sOps.LBound, V.Local.sOps.UBound,1)
+'	F.Intrinsic.Control.If(V.Global.sSeq,>,V.Local.sOps(V.Local.iOpsCnt))
+'		F.Intrinsic.String.Build("SELECT SUM(QTY) AS QTY FROM GCG_6232_PNL_SCANS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQUENCE = '{2}' AND PNL_ID = '{3}' AND STATUS = 'PASS' GROUP BY JOB, SUFFIX, SEQUENCE, PNL_ID", v.Global.sJob.Trim, v.Global.sSuffix.Trim, V.Local.sOps(V.Local.iOpsCnt), V.Local.sPanelID.Trim, V.Local.sSQL)
+'		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fPrevScannedQty)
+		
+'		F.Intrinsic.String.Build("SELECT SUM(QTY) AS QTY FROM GCG_6232_PNL_SCANS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQUENCE = '{2}' AND PNL_ID = '{3}' AND STATUS = 'PASS' GROUP BY JOB, SUFFIX, SEQUENCE, PNL_ID", v.Global.sJob.Trim, v.Global.sSuffix.Trim, V.Global.sSeq.Trim, V.Local.sPanelID.Trim, V.Local.sSQL)
+'		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fQty)
+'		F.Intrinsic.Math.Add(V.Local.fQty,1,v.Local.fQty)
+'		F.Intrinsic.Control.If(V.Local.fPrevScannedQty,<,V.Local.fQty)
+'			F.Intrinsic.UI.Msgbox("You have exceeded the number of scans on the previous sequence. Would you like to continue?", "Warning",4, V.Local.iRet)
+'			F.Intrinsic.Control.If(V.Local.iRet,=,6)
+				F.Intrinsic.Control.If(V.DataTable.dtPrevScans.RowCount--,>,-1)
+					F.Intrinsic.String.Build("SEQUENCE = '{0}' ", V.Global.sSeq.Trim, V.Local.sFilter)
+					F.Data.DataTable.Select("dtPrevScans", V.Local.sFilter, V.Local.sRow)
+					F.Intrinsic.Control.If(V.Local.sRow.Trim,<>,"", "AND", V.Local.sRow.Trim,<>,"***NORETURN***")
+						F.Intrinsic.String.Split(V.Local.sRow,"*!*", V.Local.sRow)
+						F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRow.UBound,0,-1)
+							F.Intrinsic.Control.If(V.Local.sStatus.Trim,=,"PASS", "AND", V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).STATUS!FieldValTrim,=,"PASS")
+								V.Local.fQty.Set(V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).QTY!FieldVal)
+								F.Intrinsic.Math.Add(V.Local.fQty,1,V.Local.fQty)
+								V.Local.sTime.Set(V.Ambient.Time)
+								F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+								F.Data.DataTable.SetValue("dtPrevScans", v.Local.sRow(v.Local.iCnt).Long, "QTY", V.Local.fQty, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)
+								F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+								F.Data.DataTable.AcceptChanges("dtPrevScans")
+				
+								F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+								F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+								V.Global.bDataLoaded.Set(True)
+								F.Intrinsic.Control.ExitSub
+			
+							F.Intrinsic.Control.ElseIf(v.Local.sStatus.Trim, =, "PASS", "AND", V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).STATUS!FieldValTrim,=,"FAIL")
+				
+								V.Local.iScanID.Set(V.DataTable.dtPrevScans(v.DataTable.dtPrevScans.RowCount--).SCAN_ID!FieldValTrim)
+								F.Intrinsic.Math.Add(V.Local.iScanID,1,V.Local.iScanID)
+								V.Local.sTime.Set(V.Ambient.Time)
+								F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+								F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String,  "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)
+								F.Data.DataTable.AcceptChanges("dtPrevScans")
+								F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+				
+								F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+								F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+								V.Global.bDataLoaded.Set(True)
+								F.Intrinsic.Control.ExitSub
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.Next(V.Local.iCnt)
+					F.Intrinsic.Control.Else
+						V.Local.iScanID.Set(1)
+						V.Local.sTime.Set(V.Ambient.Time)
+						F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+						F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)		
+						F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+						F.Data.DataTable.AcceptChanges("dtPrevScans")
+	
+						F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+						F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+						V.Global.bDataLoaded.Set(True)
+						F.Intrinsic.Control.ExitSub
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Else
+					V.Local.iScanID.Set(1)
+					V.Local.sTime.Set(V.Ambient.Time)
+					F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+					F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)		
+					F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+					F.Data.DataTable.AcceptChanges("dtPrevScans")
+	
+					F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+					F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+					V.Global.bDataLoaded.Set(True)
+					F.Intrinsic.Control.ExitSub
+				F.Intrinsic.Control.EndIf
+		'	F.Intrinsic.Control.ElseIf(V.Local.iRet,=,7)
+		'		F.Intrinsic.Control.ExitSub
+		'	F.Intrinsic.Control.EndIf
+		'F.Intrinsic.Control.Else
+		'	F.Intrinsic.Control.If(V.DataTable.dtPrevScans.RowCount--,>,-1)
+		'		F.Intrinsic.String.Build("SEQUENCE = '{0}' ", V.Global.sSeq.Trim, V.Local.sFilter)
+		'		F.Data.DataTable.Select("dtPrevScans", V.Local.sFilter, V.Local.sRow)
+		'		F.Intrinsic.Control.If(V.Local.sRow.Trim,<>,"", "AND", V.Local.sRow.Trim,<>,"***NORETURN***")
+		'			F.Intrinsic.String.Split(V.Local.sRow,"*!*", V.Local.sRow)
+		'			F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRow.UBound,0,-1)
+		'				F.Intrinsic.Control.If(V.Local.sStatus.Trim,=,"PASS", "AND", V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).STATUS!FieldValTrim,=,"PASS")
+		'					V.Local.fQty.Set(V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).QTY!FieldVal)
+		'					F.Intrinsic.Math.Add(V.Local.fQty,1,V.Local.fQty)
+		'					V.Local.sTime.Set(V.Ambient.Time)
+		'					F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+		'					F.Data.DataTable.SetValue("dtPrevScans", v.Local.sRow(v.Local.iCnt).Long, "QTY", V.Local.fQty, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)
+		'					F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+		'					F.Data.DataTable.AcceptChanges("dtPrevScans")
+				
+		'					F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+		'					F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+		'					V.Global.bDataLoaded.Set(True)
+		'					F.Intrinsic.Control.ExitSub
+			
+		'				F.Intrinsic.Control.ElseIf(v.Local.sStatus.Trim, =, "PASS", "AND", V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).STATUS!FieldValTrim,=,"FAIL")
+		'			
+		'					V.Local.iScanID.Set(V.DataTable.dtPrevScans(v.DataTable.dtPrevScans.RowCount--).SCAN_ID!FieldValTrim)
+		'					F.Intrinsic.Math.Add(V.Local.iScanID,1,V.Local.iScanID)
+		'					V.Local.sTime.Set(V.Ambient.Time)
+		'					F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+		'					F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String,  "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)
+		'					F.Data.DataTable.AcceptChanges("dtPrevScans")
+		'					F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+				
+		'					F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+		'					F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+		
+		'					V.Global.bDataLoaded.Set(True)
+		'					F.Intrinsic.Control.ExitSub
+		'				F.Intrinsic.Control.EndIf
+		'			F.Intrinsic.Control.Next(V.Local.iCnt)
+		'		F.Intrinsic.Control.Else
+		'			V.Local.iScanID.Set(1)
+		'			V.Local.sTime.Set(V.Ambient.Time)
+		'			F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+		'			F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)		
+		'			F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+		'			F.Data.DataTable.AcceptChanges("dtPrevScans")
+	
+		'			F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+		'			F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+		'			V.Global.bDataLoaded.Set(True)
+		'		F.Intrinsic.Control.EndIf
+		'	F.Intrinsic.Control.Else
+		'		V.Local.iScanID.Set(1)
+		'		V.Local.sTime.Set(V.Ambient.Time)
+		'		F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+		'		F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)		
+		'		F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+		'		F.Data.DataTable.AcceptChanges("dtPrevScans")
+	
+		'		F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+		'		F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+		'		V.Global.bDataLoaded.Set(True)
+		'	F.Intrinsic.Control.EndIf
+		'F.Intrinsic.Control.EndIf
+	'F.Intrinsic.Control.ElseIf(V.Global.sSeq,=,V.Local.sOps(0))
+	'	F.Intrinsic.Control.If(V.DataTable.dtPrevScans.RowCount--,>,-1)
+	'		F.Intrinsic.String.Build("SEQUENCE = '{0}' ", V.Global.sSeq.Trim, V.Local.sFilter)
+	'		F.Data.DataTable.Select("dtPrevScans", V.Local.sFilter, V.Local.sRow)
+	'		F.Intrinsic.Control.If(V.Local.sRow.Trim,<>,"", "AND", V.Local.sRow.Trim,<>,"***NORETURN***")
+	'			F.Intrinsic.String.Split(V.Local.sRow,"*!*", V.Local.sRow)
+	'			F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRow.UBound,0,-1)
+	'				F.Intrinsic.Control.If(V.Local.sStatus.Trim,=,"PASS", "AND", V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).STATUS!FieldValTrim,=,"PASS")
+	'					V.Local.fQty.Set(V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).QTY!FieldVal)
+	'					F.Intrinsic.Math.Add(V.Local.fQty,1,V.Local.fQty)
+	'					V.Local.sTime.Set(V.Ambient.Time)
+	'					F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+	'					F.Data.DataTable.SetValue("dtPrevScans", v.Local.sRow(v.Local.iCnt).Long, "QTY", V.Local.fQty, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)
+	'					F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+	'					F.Data.DataTable.AcceptChanges("dtPrevScans")
+				
+	'					F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+	'					F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+	'					V.Global.bDataLoaded.Set(True)
+	'					F.Intrinsic.Control.ExitSub
+			
+	'				F.Intrinsic.Control.ElseIf(v.Local.sStatus.Trim, =, "PASS", "AND", V.DataTable.dtPrevScans(v.Local.sRow(v.Local.iCnt).Long).STATUS!FieldValTrim,=,"FAIL")
+				
+	'					V.Local.iScanID.Set(V.DataTable.dtPrevScans(v.DataTable.dtPrevScans.RowCount--).SCAN_ID!FieldValTrim)
+	'					F.Intrinsic.Math.Add(V.Local.iScanID,1,V.Local.iScanID)
+	'					V.Local.sTime.Set(V.Ambient.Time)
+	'					F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+	'					F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String,  "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)
+	'					F.Data.DataTable.AcceptChanges("dtPrevScans")
+	'					F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+				
+	'					F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+	'					F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+	'					V.Global.bDataLoaded.Set(True)
+	'					F.Intrinsic.Control.ExitSub
+	'				F.Intrinsic.Control.EndIf
+	'			F.Intrinsic.Control.Next(V.Local.iCnt)
+	'		F.Intrinsic.Control.Else
+	'			V.Local.iScanID.Set(1)
+	'			V.Local.sTime.Set(V.Ambient.Time)
+	'			F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+	'			F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)		
+	'			F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+	'			F.Data.DataTable.AcceptChanges("dtPrevScans")
+	
+	'			F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+	'			F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+	'			V.Global.bDataLoaded.Set(True)
+	'			F.Intrinsic.Control.EndIf
+	'	F.Intrinsic.Control.Else
+	'		V.Local.iScanID.Set(1)
+	'		V.Local.sTime.Set(V.Ambient.Time)
+	'		F.Intrinsic.String.Format(V.Local.sTime, "Hh:Nn:Ss", V.Local.sTime)
+	'		F.Data.DataTable.AddRow("dtPrevScans", "JOB", V.Global.sJob.Trim, "SUFFIX", V.Global.sSuffix.Trim, "SEQUENCE", V.Global.sSeq, "PART", V.Global.sWC.Trim,"PNL_ID", V.Local.sPanelID.Trim, "FINISH", V.Local.sFinish.Trim, "STATUS", V.Local.sStatus.Trim, "PNL_ACTION", "", "QTY", 1.00, "SCAN_ID", V.Local.iScanID.String, "DATE_SCANNED", V.Ambient.Date.PSQLFriendly, "TIME_SCANNED", V.Local.sTime)		
+	'		F.Intrinsic.Math.Add(V.Global.fGoodPcs,1,V.Global.fGoodPcs)
+	'		F.Data.DataTable.AcceptChanges("dtPrevScans")
+	'
+	'		F.Data.DataTable.SaveToDB("dtPrevScans", "con", "GCG_6232_PNL_SCANS", "JOB*!*SUFFIX*!*SEQUENCE*!*PNL_ID*!*SCAN_ID", 256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*STATUS@!@STATUS*!*SCAN_ID@!@SCAN_ID*!*QTY@!@QTY*!*DATE_SCANNED@!@DATE_SCANNED*!*TIME_SCANNED@!@TIME_SCANNED")
+	'		F.Intrinsic.Control.CallSub(cmdLoadScans_Click)
+	
+	'		V.Global.bDataLoaded.Set(True)
+	'	F.Intrinsic.Control.EndIf
+	
+	'	F.Intrinsic.Control.ExitFor(v.Local.iOpsCnt)
+		
+	'F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.Next(V.Local.iOpsCnt)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.SaveScan.End
+
+Program.Sub.GsGCScans_CellValueChanged.Start
+F.Intrinsic.Control.Try
+v.Local.fQty.Declare(Float)
+V.Local.iColumn.Declare(String)
+V.Local.iRow.Declare(String)
+V.Local.sColumn.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sAction.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sPNL.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sStatus.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sScanID.Declare(String)
+
+F.Intrinsic.Control.BlockEvents
+F.Intrinsic.Control.SelectCase(V.Args.Column)
+	F.Intrinsic.Control.Case("PNL_ACTION")
+
+		Gui.f_Scan_Screen.GsGCScans.GetSelectedRows("gvPrevScans", V.Local.sRow)
+		V.Local.iRow.Set(V.Local.sRow.Long)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "JOB", V.Local.iRow, V.Local.sJob)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "SUFFIX", V.Local.iRow, V.Local.sSuffix)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "SEQUENCE", V.Local.iRow, V.Local.sSeq)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "PNL_ID", V.Local.iRow, V.Local.sPNL)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "STATUS", V.Local.iRow, V.Local.sStatus)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "PNL_ACTION", V.Local.iRow, V.Local.sAction)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "SCAN_ID", V.Local.iRow, V.Local.sScanID)
+		Gui.f_Scan_Screen.GsGCScans.GetCellValueByColumnName("gvPrevScans", "QTY", V.Local.iRow, V.Local.fQty)
+		
+		F.Intrinsic.Control.If(V.Local.sSeq.Trim,=, V.Global.sSeq.Trim, "AND",V.Local.sStatus.Trim,=,"FAIL")
+			F.Intrinsic.String.Build("UPDATE GCG_6232_PNL_SCANS SET PNL_ACTION = '{0}', STATUS = '{1}' WHERE JOB = '{2}' AND SUFFIX = '{3}' AND SEQUENCE = '{4}' AND PNL_ID = '{5}' AND SCAN_ID = '{6}' ", V.Local.sAction.Trim, v.Local.sStatus.Trim, V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.Local.sSeq.Trim, V.Local.sPNL.Trim, V.Local.sScanID.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Intrinsic.UI.Msgbox("Action successfully updated!", "Success")
+			V.Global.fScrapPcs.Set(V.Local.fQty)
+			f.Data.DataTable.AcceptChanges("dtPrevScans")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.UnBlockEvents
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGCScans_CellValueChanged.End
+
+Program.Sub.LoadCrateGrid.Start
+F.Intrinsic.Control.Try
+v.Local.sDefault.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+
+F.Intrinsic.Control.If(v.DataTable.dtCrate.Exists)
+	F.Data.DataTable.Close("dtCrate")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Create("dtCrate", True)
+F.Data.DataTable.AddColumn("dtCrate", "SEL", "BOOLEAN")
+F.Data.DataTable.AddColumn("dtCrate", "CRATE_ID", "LONG")
+F.Data.DataTable.AddColumn("dtCrate", "JOB", "STRING")
+F.Data.DataTable.AddColumn("dtCrate", "SUFFIX", "STRING")
+F.Data.DataTable.AddColumn("dtCrate", "SEQUENCE", "STRING")
+F.Data.DataTable.AddColumn("dtCrate", "PNL_ID", "STRING")
+F.Data.DataTable.AddColumn("dtCrate", "FINISH", "STRING")
+F.Data.DataTable.AddColumn("dtCrate", "QTY", "LONG")
+F.Data.DataTable.AddColumn("dtCrate", "SHIPMENT_ID", "LONG")
+F.Data.DataTable.AddColumn("dtCrate", "SHIPPED_FLAG", "STRING")
+
+Gui.f_Crate.GsGcCrates.AddGridviewFromDatatable("gvCrate1", "dtCrate")
+V.Local.sGV.Set("gvCrate1")
+Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "AllowColumnResizing", True)
+Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "AllowColumnMoving", False)
+Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "Showgrouppanel", False)
+Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "AllowAddRows", False)
+Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "AllowDeleteRows", False)
+Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "MultiSelect", True)
+'Gui.f_Crate.GsGcCrates.SetGridviewProperty(V.Local.sGV, "OptionBehaviorEditable", False)
+
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "JOB", "Visible", False)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SUFFIX", "Visible", False)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEQUENCE", "Visible", False)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", "Visible", False)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SHIPPED_FLAG", "Visible", False)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, "Crate")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, "Panel ID")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, "Finish")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, "Qty")
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, False)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, True)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("MinWidth")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, 25)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, 50)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, 100)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, 200)
+
+V.Local.sProperty.Set("MaxWidth")
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, 25)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, 50)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, 100)
+Gui.f_Crate.GsGcCrates.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, 200)
+
+Gui.f_Crate.GsGcCrates.AddSummaryItem("gvCrate1", "QTY", "TOT_QTY", "SUM", "Total Qty: ", "", "n0")
+Gui.f_Crate.GsGcCrates.MainView("gvCrate1")
+
+
+F.Intrinsic.Control.If(v.DataTable.dtTransferCrate.Exists)
+	F.Data.DataTable.Close("dtTransferCrate")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Create("dtTransferCrate", True)
+F.Data.DataTable.AddColumn("dtTransferCrate", "SEL", "BOOLEAN")
+F.Data.DataTable.AddColumn("dtTransferCrate", "CRATE_ID", "LONG")
+F.Data.DataTable.AddColumn("dtTransferCrate", "JOB", "STRING")
+F.Data.DataTable.AddColumn("dtTransferCrate", "SUFFIX", "STRING")
+F.Data.DataTable.AddColumn("dtTransferCrate", "SEQUENCE", "STRING")
+F.Data.DataTable.AddColumn("dtTransferCrate", "PNL_ID", "STRING")
+F.Data.DataTable.AddColumn("dtTransferCrate", "FINISH", "STRING")
+F.Data.DataTable.AddColumn("dtTransferCrate", "QTY", "LONG")
+F.Data.DataTable.AddColumn("dtTransferCrate", "SHIPMENT_ID", "LONG")
+F.Data.DataTable.AddColumn("dtTransferCrate", "SHIPPED_FLAG", "STRING")
+
+Gui.f_Crate.GsGCTransfer.AddGridviewFromDatatable("gvCrate2", "dtTransferCrate")
+V.Local.sGV.Set("gvCrate2")
+gui.f_Crate.GsGCTransfer.SetGridviewProperty(V.Local.sGV, "AllowColumnResizing", True)
+gui.f_Crate.GsGCTransfer.SetGridviewProperty(V.Local.sGV, "AllowColumnMoving", False)
+gui.f_Crate.GsGCTransfer.SetGridviewProperty(V.Local.sGV, "Showgrouppanel", False)
+gui.f_Crate.GsGCTransfer.SetGridviewProperty(V.Local.sGV, "AllowAddRows", False)
+gui.f_Crate.GsGCTransfer.SetGridviewProperty(V.Local.sGV, "AllowDeleteRows", False)
+gui.f_Crate.GsGCTransfer.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+gui.f_Crate.GsGCTransfer.SetGridviewProperty(V.Local.sGV, "MultiSelect", True)
+
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "JOB", "Visible", False)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SUFFIX", "Visible", False)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEQUENCE", "Visible", False)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", "Visible", False)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SHIPPED_FLAG", "Visible", False)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, "Crate")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, "Panel ID")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, "Finish")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, "Qty")
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, False)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, True)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("MinWidth")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, 25)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, 50)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, 100)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, 200)
+
+V.Local.sProperty.Set("MaxWidth")
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "SEL", V.Local.sProperty, 25)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "CRATE_ID", V.Local.sProperty, 50)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, 100)
+gui.f_Crate.GsGCTransfer.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, 200)
+
+gui.f_Crate.GsGCTransfer.AddSummaryItem("gvCrate2", "QTY", "TOT_TRANSFER_QTY", "SUM", "Total  Qty: ", "", "n0")
+gui.f_Crate.GsGCTransfer.MainView("gvCrate2")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadCrateGrid.End
+
+Program.Sub.cmdNewCrate_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.iCrateID.Declare(Long)
+V.Local.sCrateID.Declare(String)
+V.Local.sCrateNo.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sWO.Declare(String)
+
+Gui.f_Crate..Size(541, 405)
+
+Gui.f_Crate.ddlTransfer.Visible(False)
+Gui.f_Crate.lblTransfer.Visible(False)
+Gui.f_Crate.GsGCTransfer.Visible(False)
+Gui.f_Crate.cmdRemovePnl2.Visible(False)
+gui.f_Crate.cmdUp.Visible(False)
+gui.f_Crate.cmdDown.Visible(False)
+
+Gui.f_Crate.lblCrates.Visible(True)
+Gui.f_Crate.ddlCrates.Visible(True)
+Gui.f_Crate.cmdRemovePnl1.Visible(True)
+
+
+V.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Global.sJob.Set(V.Local.sWO(0).Trim)
+V.Global.sSuffix.Set(V.Local.sWO(1).Trim)
+
+V.Local.sCrateID.Set(V.Screen.f_Crate!ddlCrates.Value)
+F.Intrinsic.Control.If(V.Local.sCrateID,=,"")
+	F.Intrinsic.String.Build("SELECT DISTINCT CRATE_NO FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}'", V.Global.sJob.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sCrateNo)
+	F.Intrinsic.Control.If(V.Local.sCrateNo.Trim,<>,"")
+		F.Intrinsic.String.Build("SELECT DISTINCT TOP 1 CRATE_NO FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}' ORDER BY CRATE_NO DESC", V.Global.sJob.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, v.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			V.Local.iCrateID.Set(V.Local.sRet.Long)
+			F.Intrinsic.Math.Add(V.Local.iCrateID,1, V.Local.iCrateID)
+			Gui.f_Crate.ddlCrates.AddItem(v.Local.iCrateID)
+			Gui.f_Crate.ddlCrates.Text(V.Local.iCrateID)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.iCrateID.Set(001)
+		Gui.f_Crate.ddlCrates.AddItem(V.Local.iCrateID)
+		Gui.f_Crate.ddlCrates.Text(V.Local.iCrateID)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	V.Local.iCrateID.Set(v.Local.sCrateID.Long)
+	F.Intrinsic.Math.Add(V.Local.iCrateID,1,V.Local.iCrateID)
+	Gui.f_Crate.ddlCrates.AddItem(v.Local.iCrateID)
+	Gui.f_Crate.ddlCrates.Text(V.Local.iCrateID)
+F.Intrinsic.Control.EndIf
+
+Gui.f_Crate.txtPanel.Enabled(True)
+Gui.f_Crate.GsGCTransfer.Visible(False)
+gui.f_Crate.cmdUp.Visible(False)
+gui.f_Crate.cmdDown.Visible(False)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNewCrate_Click.End
+
+Program.Sub.cmdExCrate_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(String)
+V.Local.iCrate.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+v.Local.sWO.Declare(String)
+V.Local.iIndex.Declare(Long)
+
+V.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Global.sJob.Set(V.Local.sWO(0).Trim)
+V.Global.sSuffix.Set(V.Local.sWO(1).Trim)
+
+Gui.f_Crate.ddlCrates.ClearItems
+Gui.f_Crate.ddlCrates.ClearSelected
+
+Gui.f_Crate.ddlTransfer.ClearItems
+Gui.f_Crate.ddlTransfer.ClearItems
+
+
+F.Intrinsic.String.Build("SELECT DISTINCT CRATE_NO FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}' AND SUFFIX = '{1}' ORDER BY CRATE_NO", V.Global.sJob.Trim, V.Global.sSuffix.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"")
+	F.Intrinsic.String.Split(v.Local.sRet,"#$#", V.Local.sRet)
+	Gui.f_Crate.ddlCrates.Visible(True)
+	Gui.f_Crate.lblCrates.Visible(True)
+	Gui.f_Crate.lblTransfer.Visible(True)
+	Gui.f_Crate.lblTransfer.BackStyle(0)
+	Gui.f_Crate.ddlTransfer.Visible(True)
+	Gui.f_Crate.GsGCTransfer.Visible(True)
+	Gui.f_Crate.cmdRemovePnl2.Visible(True)
+	gui.f_Crate.cmdUp.Visible(True)
+	gui.f_Crate.cmdDown.Visible(True)
+	Gui.f_Crate.cmdRemovePnl1.Visible(True)
+	F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRet.LBound, V.Local.sRet.UBound, 1)
+		V.Local.iCrate.Set(V.Local.sRet(V.Local.iCnt).Long)
+		Gui.f_Crate.ddlCrates.AddItem(V.Local.sRet(V.Local.iCnt).Trim)
+		Gui.f_Crate.ddlTransfer.AddItem(V.Local.sRet(V.Local.iCnt).Trim)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No Crates for this Job. You will need to create a new Crate to continue.", "No Existing Records")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.f_Crate.txtPanel.Enabled(True)
+Gui.f_Crate..Size(541,739)
+Gui.f_Crate.cmdDown.Size(27,23)
+Gui.f_Crate.cmdUp.Size(27,23)
+Gui.f_Crate.GsGcCrates.Size(528, 266)
+Gui.f_Crate.GsGCTransfer.Size(528, 266)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExCrate_Click.End
+
+Program.Sub.txtPanel_KeyPressEnter.Start
+F.Intrinsic.Control.Try
+V.Local.bSecGroup.Declare(Boolean)
+V.Local.bValPass.Declare(Boolean)
+V.Local.iCnt.Declare(Long)
+V.Local.iQty.Declare(Long)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sPanelID.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sCrateNo.Declare(String)
+V.Local.sShipFlag.Declare(String)
+V.Local.sPass.Declare(String)
+
+v.Local.sCrateNo.Set(V.Screen.f_Crate!ddlCrates.Text)
+
+F.Intrinsic.Control.If(V.Screen.f_Crate!ddlCrates.Text,<>,"", "AND", V.Screen.f_Crate!txtPanel.Text,<>,"")
+	V.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+	F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+	V.Local.sJob.Set(V.Local.sWO(0).Trim)
+	V.Local.sSuffix.Set(V.Local.sWO(1).Trim)
+
+	V.Local.sPanelID.Set(V.Screen.f_Crate!txtPanel.Text)
+	F.Intrinsic.String.UCase(V.Local.sPanelID, V.Local.sPanelID)
+	F.Intrinsic.Control.If(V.Local.sPanelID.Trim,<>,"")
+		F.Intrinsic.String.Build("SELECT DISTINCT FINISH FROM GCG_6232_PANEL_INFO WHERE PNL = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' ", V.Local.sPanelID, V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			F.Intrinsic.Control.CallSub(PanelAdd)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("The Finish for the scanned Panel has not been Imported. Please try again after the Panel Import is complete", "Missing Information")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf	
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a Crate before you can continue.", "Required Field")
+	V.Global.bDataLoaded.Set(False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.txtPanel_KeyPressEnter.End
+
+Program.Sub.PanelAdd.Start
+F.Intrinsic.Control.Try
+V.Local.bSecGroup.Declare(Boolean)
+V.Local.bValPass.Declare(Boolean)
+V.Local.fPrevScannedQty.Declare(Float)
+V.Local.fQty.Declare(Float)
+V.Local.iCnt.Declare(Long)
+V.Local.iQty.Declare(Long)
+V.Local.iRet.Declare(Long)
+V.Local.iTotQty.Declare(Long)
+V.Local.iOpsCnt.Declare(Long)
+V.Local.iCnt2.Declare(Long)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sPanelID.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRet2.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sCrateNo.Declare(String)
+V.Local.sShipFlag.Declare(String)
+V.Local.sPass.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sOps.Declare(String)
+
+v.Local.sCrateNo.Set(V.Screen.f_Crate!ddlCrates.Text)
+V.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Local.sJob.Set(V.Local.sWO(0).Trim)
+V.Local.sSuffix.Set(V.Local.sWO(1).Trim)
+
+V.Local.sPanelID.Set(V.Screen.f_Crate!txtPanel.Text)
+F.Intrinsic.String.UCase(V.Local.sPanelID, V.Local.sPanelID)
+
+F.Intrinsic.String.Build("SELECT FINISH FROM GCG_6232_PANEL_INFO WHERE JOB = '{0}' AND SUFFIX = '{1}' AND PNL = '{2}'", V.Local.sJob, V.Local.sSuffix, V.Local.sPanelID, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	'F.Intrinsic.String.Build("SELECT SEQ FROM V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND OPERATION IN ('SCAN', 'SHIP') AND LMO = 'L' AND SEQ < '900000' ", V.Global.sJob.Trim, V.Global.sSuffix.Trim, V.Local.sSQL)
+	'F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet2)
+	'F.Intrinsic.Control.If(v.Local.sRet2,<>,"")
+	'	F.Intrinsic.String.Split(V.Local.sRet2, "#$#", V.Local.sOps)
+	'F.Intrinsic.Control.EndIf
+	
+	'F.Intrinsic.Math.Sub(v.Local.sOps.UBound,1,v.Local.iCnt2)
+	'F.Intrinsic.Control.For(v.Local.iOpsCnt, v.Local.iCnt2, v.Local.sOps.UBound,1)
+		
+	'	F.Intrinsic.Control.If(V.Global.sSeq,>,V.Local.sOps(V.Local.iOpsCnt))
+	'		F.Intrinsic.String.Build("SELECT SUM(QTY) AS QTY FROM GCG_6232_PNL_SCANS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQUENCE = '{2}' AND PNL_ID = '{3}' AND STATUS = 'PASS' GROUP BY JOB, SUFFIX, SEQUENCE, PNL_ID", v.Global.sJob.Trim, v.Global.sSuffix.Trim, V.Local.sOps(V.Local.iOpsCnt), V.Local.sPanelID.Trim, V.Local.sSQL)
+	'		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fPrevScannedQty)
+			
+	'		F.Intrinsic.String.Build("SELECT SUM(QTY) AS QTY FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQUENCE = '{2}' AND PNL_ID = '{3}' GROUP BY JOB, SUFFIX, SEQUENCE, PNL_ID", v.Global.sJob.Trim, v.Global.sSuffix.Trim, V.Global.sSeq.Trim, V.Local.sPanelID.Trim, V.Local.sSQL)
+	'		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fQty)
+	'		F.Intrinsic.Math.Add(V.Local.fQty,1,v.Local.fQty)
+	'		F.Intrinsic.Control.If(V.Local.fPrevScannedQty,<,V.Local.fQty)
+	'			F.Intrinsic.UI.Msgbox("You have exceeded the number of scans on the previous sequence. Would you like to continue?", "Warning",4, V.Local.iRet)
+	'			F.Intrinsic.Control.If(V.Local.iRet,=,6)
+				
+					F.Intrinsic.Control.If(V.DataTable.dtCrate.RowCount--,>,-1)
+						F.Intrinsic.String.Build("PNL_ID = '{0}'", v.Local.sPanelID.Trim, v.Local.sFilter)
+						f.Data.DataTable.Select("dtCrate", V.Local.sFilter, v.Local.sRow)
+						f.Intrinsic.Control.If(V.Local.sRow.Trim,<>,"", "AND", V.Local.sRow.Trim,<>,"***NORETURN***")
+							F.Intrinsic.String.Split(v.Local.sRow,"*!*", v.Local.sRow)
+							V.Local.iQty.Set(V.DataTable.dtCrate(V.Local.sRow(V.Local.sRow.UBound)).QTY!FieldVal)
+							F.Intrinsic.Math.Add(V.Local.iQty,1, V.Local.iQty)
+							F.Data.DataTable.SetValue("dtCrate", V.Local.sRow(v.Local.sRow.UBound), "QTY", V.Local.iQty)
+							F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+						F.Intrinsic.Control.ElseIf(V.Local.sRow.Trim,=,"", "OR", V.Local.sRow.Trim,=,"***NORETURN***")
+							F.Data.DataTable.AddRow("dtCrate", "SEL", 0,"CRATE_ID", V.Screen.f_Crate!ddlCrates.Text, "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "SEQUENCE", V.Global.sSeq.Trim,"PNL_ID", V.Local.sPanelID, "FINISH", V.Local.sRet.Trim, "QTY", 1)
+							F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+						f.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.Else
+						F.Data.DataTable.AddRow("dtCrate", "SEL", 0,"CRATE_ID", V.Screen.f_Crate!ddlCrates.Text, "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "SEQUENCE", V.Global.sSeq.Trim,"PNL_ID", V.Local.sPanelID, "FINISH", V.Local.sRet.Trim, "QTY", 1)
+						F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+					F.Intrinsic.Control.EndIf		
+					F.Data.DataTable.SaveToDB("dtCrate", "con", "GCG_6232_Panel_Crate", "CRATE_ID*!*JOB*!*SUFFIX*!*PNL_ID*!*FINISH",256, "CRATE_ID@!@CRATE_NO*!*JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*QTY@!@QTY")
+					V.Global.bDataLoaded.Set(True)
+			'	F.Intrinsic.Control.ElseIf(v.Local.iRet,=,7)
+			'		F.Intrinsic.Control.ExitSub
+			'	F.Intrinsic.Control.EndIf
+			'F.Intrinsic.Control.Else
+			'	F.Intrinsic.Control.If(V.DataTable.dtCrate.RowCount--,>,-1)
+			'		F.Intrinsic.String.Build("PNL_ID = '{0}'", v.Local.sPanelID.Trim, v.Local.sFilter)
+			'		f.Data.DataTable.Select("dtCrate", V.Local.sFilter, v.Local.sRow)
+			'		f.Intrinsic.Control.If(V.Local.sRow.Trim,<>,"", "AND", V.Local.sRow.Trim,<>,"***NORETURN***")
+			'			F.Intrinsic.String.Split(v.Local.sRow,"*!*", v.Local.sRow)
+			'			V.Local.iQty.Set(V.DataTable.dtCrate(V.Local.sRow(V.Local.sRow.UBound)).QTY!FieldVal)
+			'			F.Intrinsic.Math.Add(V.Local.iQty,1, V.Local.iQty)
+			'			F.Data.DataTable.SetValue("dtCrate", V.Local.sRow(v.Local.sRow.UBound), "QTY", V.Local.iQty)
+			'			F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+			'		F.Intrinsic.Control.ElseIf(V.Local.sRow.Trim,=,"", "OR",  v.Local.sRow.Trim,=,"***NORETURN***")
+			'			F.Data.DataTable.AddRow("dtCrate", "SEL", 0,"CRATE_ID", V.Screen.f_Crate!ddlCrates.Text, "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "SEQUENCE", V.Global.sSeq.Trim,"PNL_ID", V.Local.sPanelID, "FINISH", V.Local.sRet.Trim, "QTY", 1)
+			'			F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+			'		f.Intrinsic.Control.EndIf
+			'	F.Intrinsic.Control.Else
+			'		F.Data.DataTable.AddRow("dtCrate", "SEL", 0,"CRATE_ID", V.Screen.f_Crate!ddlCrates.Text, "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "SEQUENCE", V.Global.sSeq.Trim,"PNL_ID", V.Local.sPanelID, "FINISH", V.Local.sRet.Trim, "QTY", 1)
+			'		F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+			'	F.Intrinsic.Control.EndIf		
+			'	F.Data.DataTable.SaveToDB("dtCrate", "con", "GCG_6232_Panel_Crate", "CRATE_ID*!*JOB*!*SUFFIX*!*PNL_ID*!*FINISH",256, "CRATE_ID@!@CRATE_NO*!*JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*QTY@!@QTY")
+			'	V.Global.bDataLoaded.Set(True)
+			'F.Intrinsic.Control.EndIf
+	'	F.Intrinsic.Control.ElseIf(v.Global.sSeq,=,V.Local.sOps(0))
+			'check to see if there are already any existing records in the table that match. If so, add the qty's and only have one record
+	'		F.Intrinsic.Control.If(V.DataTable.dtCrate.RowCount--,>,-1)
+	'			F.Intrinsic.String.Build("PNL_ID = '{0}'", v.Local.sPanelID.Trim, v.Local.sFilter)
+	'			f.Data.DataTable.Select("dtCrate", V.Local.sFilter, v.Local.sRow)
+	'			f.Intrinsic.Control.If(V.Local.sRow.Trim,<>,"", "OR", v.Local.sRow.Trim,<>,"***NORETURN***")
+	'				F.Intrinsic.String.Split(v.Local.sRow,"*!*", v.Local.sRow)
+	'				V.Local.iQty.Set(V.DataTable.dtCrate(V.Local.sRow(V.Local.sRow.UBound)).QTY!FieldVal)
+	'				F.Intrinsic.Math.Add(V.Local.iQty,1, V.Local.iQty)
+	'				F.Data.DataTable.SetValue("dtCrate", V.Local.sRow(v.Local.sRow.UBound), "QTY", V.Local.iQty)
+	'				F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+	'			F.Intrinsic.Control.Else
+	'				F.Data.DataTable.AddRow("dtCrate", "SEL", 0,"CRATE_ID", V.Screen.f_Crate!ddlCrates.Text, "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "SEQUENCE", V.Global.sSeq.Trim,"PNL_ID", V.Local.sPanelID, "FINISH", V.Local.sRet.Trim, "QTY", 1)
+	'				F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+	'			f.Intrinsic.Control.EndIf
+	'		F.Intrinsic.Control.Else
+	'			F.Data.DataTable.AddRow("dtCrate", "SEL", 0,"CRATE_ID", V.Screen.f_Crate!ddlCrates.Text, "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "SEQUENCE", V.Global.sSeq.Trim,"PNL_ID", V.Local.sPanelID, "FINISH", V.Local.sRet.Trim, "QTY", 1)
+	'			F.Intrinsic.Math.Add(V.Global.fGoodPcs,1, V.Global.fGoodPcs)
+	'		F.Intrinsic.Control.EndIf
+			'else add the row as a new record		
+	'		F.Data.DataTable.SaveToDB("dtCrate", "con", "GCG_6232_Panel_Crate", "CRATE_ID*!*JOB*!*SUFFIX*!*PNL_ID*!*FINISH",256, "CRATE_ID@!@CRATE_NO*!*JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQUENCE@!@SEQUENCE*!*PNL_ID@!@PNL_ID*!*FINISH@!@FINISH*!*QTY@!@QTY")
+	'		V.Global.bDataLoaded.Set(True)
+	'	F.Intrinsic.Control.EndIf
+		
+	'F.Intrinsic.Control.Next(v.Local.iOpsCnt)
+F.Intrinsic.Control.EndIf
+Gui.f_Crate.txtPanel.Text("")
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.PanelAdd.End
+
+Program.Sub.ddlCrates_Change.Start
+F.Intrinsic.Control.Try
+V.Local.iCrateNo.Declare(String)
+V.Local.iCnt.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sCrateNo.Declare(String)
+v.Local.sValues.Declare(String)
+
+v.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Local.sJob.Set(V.Local.sWO(0).Trim)
+V.Local.sSuffix.Set(V.Local.sWO(1).Trim)
+V.Local.sCrateNo.Set(V.Screen.f_Crate!ddlCrates.Text)
+V.Local.iCrateNo.Set(V.Local.sCrateNo.Long)
+
+F.Intrinsic.Control.If(V.DataTable.dtCrate.Exists)
+	F.Data.DataTable.DeleteRow("dtCrate", -1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("SELECT  CRATE_NO, PNL_ID, FINISH, QTY, SHIPMENT_ID, SHIPPED_FLAG FROM GCG_6232_PANEL_CRATE WHERE CRATE_NO = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND SEQUENCE = '{3}'", V.Local.iCrateNo,V.Local.sJob, V.Local.sSuffix,  V.Global.sSeq.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet, "#$#", V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRet.LBound, V.Local.sRet.UBound, 1)
+		F.Intrinsic.String.Split(V.Local.sRet(V.Local.iCnt),"*!*", V.Local.sValues)
+		F.Data.DataTable.AddRow("dtCrate", "CRATE_ID", V.Local.sValues(0), "PNL_ID", V.Local.sValues(1), "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim,"SEQUENCE", V.Global.sSeq.Trim, "FINISH", V.Local.sValues(2), "QTY", V.Local.sValues(3).Float, "SHIPMENT_ID", V.Local.sValues(4).Long, "SHIPPED_FLAG", V.Local.sValues(5).Trim)
+		F.Data.DataTable.SetValue("dtCrate", -1, "SEL", 0)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.ddlCrates_Change.End
+
+Program.Sub.ddlTransfer_Change.Start
+F.Intrinsic.Control.Try
+V.Local.iCrateNo.Declare(String)
+V.Local.iCnt.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sCrateNo.Declare(String)
+v.Local.sValues.Declare(String)
+
+v.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Local.sJob.Set(V.Local.sWO(0).Trim)
+V.Local.sSuffix.Set(V.Local.sWO(1).Trim)
+V.Local.sCrateNo.Set(V.Screen.f_Crate!ddlTransfer.Text)
+V.Local.iCrateNo.Set(V.Local.sCrateNo.Long)
+
+F.Intrinsic.Control.If(V.DataTable.dtTransferCrate.Exists)
+	F.Data.DataTable.DeleteRow("dtTransferCrate", -1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("SELECT  CRATE_NO, PNL_ID, FINISH, QTY, SHIPMENT_ID, SHIPPED_FLAG FROM GCG_6232_PANEL_CRATE WHERE CRATE_NO = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND SEQUENCE = '{3}'", V.Local.iCrateNo,V.Local.sJob, V.Local.sSuffix, V.Global.sSeq.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet, "#$#", V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRet.LBound, V.Local.sRet.UBound, 1)
+		F.Intrinsic.String.Split(V.Local.sRet(V.Local.iCnt),"*!*", V.Local.sValues)
+		F.Data.DataTable.AddRow("dtTransferCrate", "CRATE_ID", V.Local.sValues(0), "PNL_ID", V.Local.sValues(1), "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "SEQUENCE", V.Global.sSeq.Trim,"FINISH", V.Local.sValues(2), "QTY", V.Local.sValues(3).Float,"SHIPMENT_ID", V.Local.sValues(4).Long, "SHIPPED_FLAG", V.Local.sValues(5).Trim)
+		F.Data.DataTable.SetValue("dtTransferCrate", -1, "SEL", 0)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.ddlTransfer_Change.End
+
+Program.Sub.cmdDown_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.iCrate.Declare(Long)
+V.Local.iQty.Declare(Long)
+V.Local.sPrevCrate.Declare(String)
+V.Local.sTransferCrate.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sPNL.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sWO.Declare(String)
+
+v.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Local.sJob.Set(V.Local.sWO(0).Trim)
+V.Local.sSuffix.Set(V.Local.sWO(1).Trim)
+
+V.Local.sPrevCrate.Set(V.Screen.f_Crate!ddlCrates.Text)
+V.Local.sTransferCrate.Set(V.Screen.f_Crate!ddlTransfer.Text)
+
+F.Intrinsic.Control.If(V.Local.sPrevCrate.Trim,<>,"")
+	F.Intrinsic.Control.For(V.Local.iCnt, V.DataTable.dtCrate.RowCount--,0,-1)
+	'check to see which row is selected
+		F.Intrinsic.Control.If(V.DataTable.dtCrate(V.Local.iCnt).SEL!FieldVal,=,True)
+			V.Local.sPNL.Set(V.DataTable.dtCrate(V.Local.iCnt).PNL_ID!FieldValTrim)
+			F.Intrinsic.String.Build("PNL_ID = '{0}' ", V.Local.sPNL.Trim, V.Local.sFilter)
+			F.Data.DataTable.Select("dtTransferCrate", V.Local.sFilter, V.Local.sRow)
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				V.Local.iQty.Set(V.DataTable.dtTransferCrate(V.Local.sRow.Long).QTY!FieldVal)
+				F.Intrinsic.Math.Add(V.Local.iQty,V.DataTable.dtCrate(V.Local.iCnt).QTY!FieldVal, V.Local.iQty)
+				F.Data.DataTable.SetValue("dtTransferCrate", V.Local.sRow.Long, "QTY", V.Local.iQty)
+				F.Intrinsic.String.Build("DELETE FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}' AND SUFFIX = '{1}' AND PNL_ID = '{2}' AND FINISH = '{3}' AND CRATE_NO = '{4}' AND SEQUENCE = '{5}'", V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.DataTable.dtCrate(V.Local.iCnt).PNL_ID!FieldValTrim, V.DataTable.dtCrate(V.Local.iCnt).FINISH!FieldValTrim, V.Local.sPrevCrate.Long, v.Global.sSeq.Trim, V.Local.sSQL)
+				F.ODBC.Connection!con.Execute(V.Local.sSQL)
+				F.Intrinsic.String.Build("UPDATE GCG_6232_PANEL_CRATE SET QTY = '{0}' WHERE JOB = '{1}' AND SUFFIX = '{2}' AND PNL_ID = '{3}' AND FINISH = '{4}' AND CRATE_NO = '{5}' AND SEQUENCE = '{6}' ",  V.Local.iQty,  V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.DataTable.dtCrate(V.Local.iCnt).PNL_ID!FieldValTrim, V.DataTable.dtCrate(V.Local.iCnt).FINISH!FieldValTrim, V.Local.sTransferCrate.Long, V.Global.sSeq.Trim, V.Local.sSQL)
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.AddRow("dtTransferCrate", "SEL", 0,"CRATE_ID", V.Local.sTransferCrate.Long, "PNL_ID", V.DataTable.dtCrate(V.Local.iCnt).PNL_ID!FieldValTrim, "JOB", V.Local.sJob.Trim, "SUFFIX",V.Local.sSuffix.Trim, "FINISH", V.DataTable.dtCrate(V.Local.iCnt).FINISH!FieldValTrim, "SEQUENCE", V.Global.sSeq.Trim,"QTY", V.DataTable.dtCrate(V.Local.iCnt).QTY!FieldVal)
+				F.Intrinsic.String.Build("UPDATE GCG_6232_PANEL_CRATE SET CRATE_NO = '{0}' WHERE JOB = '{1}' AND SUFFIX = '{2}' AND PNL_ID = '{3}' AND FINISH = '{4}' AND CRATE_NO = '{5}' AND SEQUENCE = '{6}'", V.Local.sTransferCrate.Long, V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.DataTable.dtCrate(V.Local.iCnt).PNL_ID!FieldValTrim, V.DataTable.dtCrate(V.Local.iCnt).FINISH!FieldValTrim, V.Local.sPrevCrate.Trim, v.Global.sSeq.Trim, V.Local.sSQL)
+			F.Intrinsic.Control.EndIf	
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Data.DataTable.DeleteRow("dtCrate", V.Local.iCnt)
+			F.Data.DataTable.AcceptChanges("dtCrate")
+			F.Data.DataTable.AcceptChanges("dtTransferCrate")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a transfer crate to continue!", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDown_Click.End
+
+Program.Sub.cmdUp_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.iCnt2.Declare(Long)
+V.Local.iCrate.Declare(Long)
+V.Local.iQty.Declare(Long)
+V.Local.sFilter.Declare(String)
+V.Local.sPrevCrate.Declare(String)
+V.Local.sTransferCrate.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sPNL.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sWO.Declare(String)
+
+v.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Local.sJob.Set(V.Local.sWO(0).Trim)
+V.Local.sSuffix.Set(V.Local.sWO(1).Trim)
+
+V.Local.sPrevCrate.Set(V.Screen.f_Crate!ddlTransfer.Text)
+V.Local.sTransferCrate.Set(V.Screen.f_Crate!ddlCrates.Text)
+
+F.Intrinsic.Control.If(V.Local.sPrevCrate.Trim,<>,"")
+	F.Intrinsic.Control.For(V.Local.iCnt, V.DataTable.dtTransferCrate.RowCount--,0,-1)
+	'check to see which row is selected
+		F.Intrinsic.Control.If(V.DataTable.dtTransferCrate(V.Local.iCnt).SEL!FieldVal,=,True)
+			V.Local.sPNL.Set(V.DataTable.dtTransferCrate(V.Local.iCnt).PNL_ID!FieldValTrim)
+			F.Intrinsic.String.Build("PNL_ID = '{0}' ", V.Local.sPNL.Trim, V.Local.sFilter)
+			F.Data.DataTable.Select("dtCrate", V.Local.sFilter, V.Local.sRow)
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				V.Local.iQty.Set(V.DataTable.dtCrate(V.Local.sRow.Long).QTY!FieldVal)
+				F.Intrinsic.Math.Add(V.Local.iQty,V.DataTable.dtTransferCrate(V.Local.iCnt).QTY!FieldVal, V.Local.iQty)
+				F.Data.DataTable.SetValue("dtCrate", V.Local.sRow.Long, "QTY", V.Local.iQty)
+				F.Intrinsic.String.Build("DELETE FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}' AND SUFFIX = '{1}' AND PNL_ID = '{2}' AND FINISH = '{3}' AND CRATE_NO = '{4}' AND SEQUENCE = '{5}'", V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.DataTable.dtTransferCrate(V.Local.iCnt).PNL_ID!FieldValTrim, V.DataTable.dtTransferCrate(V.Local.iCnt).FINISH!FieldValTrim, V.Local.sPrevCrate.Long, V.Global.sSeq.Trim, V.Local.sSQL)
+				F.ODBC.Connection!con.Execute(V.Local.sSQL)
+				F.Intrinsic.String.Build("UPDATE GCG_6232_PANEL_CRATE SET QTY = '{0}' WHERE JOB = '{1}' AND SUFFIX = '{2}' AND PNL_ID = '{3}' AND FINISH = '{4}' AND CRATE_NO = '{5}' AND SEQUENCE = '{6}'",  V.Local.iQty,  V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.DataTable.dtTransferCrate(V.Local.iCnt).PNL_ID!FieldValTrim, V.DataTable.dtTransferCrate(V.Local.iCnt).FINISH!FieldValTrim, V.Local.sTransferCrate.Long, V.Global.sSeq.Trim, V.Local.sSQL)
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.AddRow("dtCrate", "SEL", 0,"CRATE_ID", V.Local.sTransferCrate.Long, "PNL_ID", V.DataTable.dtTransferCrate(V.Local.iCnt).PNL_ID!FieldValTrim, "JOB", V.Local.sJob.Trim, "SUFFIX",V.Local.sSuffix.Trim,  "SEQUENCE", V.Global.sSeq.Trim, "FINISH",V.DataTable.dtTransferCrate(V.Local.iCnt).FINISH!FieldValTrim, "QTY", V.DataTable.dtTransferCrate(V.Local.iCnt).QTY!FieldVal)
+				F.Intrinsic.String.Build("UPDATE GCG_6232_PANEL_CRATE SET CRATE_NO = '{0}' WHERE JOB = '{1}' AND SUFFIX = '{2}' AND PNL_ID = '{3}' AND FINISH = '{4}' AND CRATE_NO = '{5}' AND SEQUENCE = '{6}'", V.Local.sTransferCrate.Long, V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.DataTable.dtTransferCrate(V.Local.iCnt).PNL_ID!FieldValTrim, V.DataTable.dtTransferCrate(V.Local.iCnt).FINISH!FieldValTrim, V.Local.sPrevCrate.Trim,  v.Global.sSeq.Trim, V.Local.sSQL)
+			F.Intrinsic.Control.EndIf
+
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Data.DataTable.DeleteRow("dtTransferCrate", V.Local.iCnt)
+			F.Data.DataTable.AcceptChanges("dtCrate")
+			F.Data.DataTable.AcceptChanges("dtTransferCrate")
+			
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a transfer crate to continue!", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUp_Click.End
+
+Program.Sub.cmdRemovePnl1_Click.Start
+F.Intrinsic.Control.Try
+V.Local.icnt.Declare(Long)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.Control.For(V.Local.icnt, V.DataTable.dtCrate.RowCount--,0,-1)
+	F.Intrinsic.Control.If(V.DataTable.dtCrate(V.Local.icnt).SEL!FieldVal,=,True)
+		F.Intrinsic.String.Build("DELETE FROM GCG_6232_PANEL_CRATE WHERE CRATE_NO = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND SEQUENCE = '{3}' AND PNL_ID = '{4}'", V.DataTable.dtCrate(V.Local.icnt).CRATE_ID!FieldVal,V.DataTable.dtCrate(V.Local.icnt).JOB!FieldValtrim, V.DataTable.dtCrate(V.Local.icnt).SUFFIX!FieldValTrim, v.DataTable.dtCrate(v.Local.icnt).SEQUENCE!FieldValTrim, V.DataTable.dtCrate(V.Local.icnt).PNL_ID!FieldVal, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Data.DataTable.DeleteRow("dtCrate", V.Local.icnt)
+		F.Data.DataTable.AcceptChanges("dtCrate")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.icnt)
+
+Gui.f_Crate.ddlCrates.ClearSelected
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRemovePnl1_Click.End
+
+Program.Sub.cmdRemovePnl2_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.icnt.Declare(Long)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.Control.For(V.Local.icnt, V.DataTable.dtTransferCrate.RowCount--,0,-1)
+	F.Intrinsic.Control.If(V.DataTable.dtTransferCrate(V.Local.icnt).SEL!FieldVal,=,True)
+		F.Intrinsic.String.Build("DELETE FROM GCG_6232_PANEL_CRATE WHERE CRATE_NO = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND PNL_ID = '{3}' AND SEQUENCE = '{4}'", V.DataTable.dtTransferCrate(V.Local.icnt).CRATE_ID!FieldVal,V.DataTable.dtTransferCrate(V.Local.icnt).JOB!FieldValtrim, V.DataTable.dtTransferCrate(V.Local.icnt).SUFFIX!FieldValTrim, V.DataTable.dtTransferCrate(V.Local.icnt).PNL_ID!FieldVal, V.DataTable.dtTransferCrate(V.Local.icnt).SEQUENCE!FieldValTrim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Data.DataTable.DeleteRow("dtTransferCrate", V.Local.icnt)
+		F.Data.DataTable.AcceptChanges("dtTransferCrate")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.icnt)
+
+Gui.f_Crate.ddlTransfer.ClearSelected
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRemovePnl2_Click.End
+
+Program.Sub.cmdPckingList_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iShipmentID.Declare(Long)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sDefault.Declare(String)
+V.Local.sProperty.Declare(String)
+v.Local.sShipmentID.Declare(String)
+
+V.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+V.Local.sJob.Set(V.Local.sWO(0).Trim)
+V.Local.sSuffix.Set(V.Local.sWO(1).Trim)
+
+F.Intrinsic.String.Build("SELECT DISTINCT CRATE_NO FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SHIPPED_FLAG IS NULL AND SHIPMENT_ID IS NULL ORDER BY CRATE_NO", v.Local.sJob.Trim, V.Local.sSuffix.Trim, V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.DataTable.dtShipCrates.Exists)
+	F.Data.DataTable.Close("dtShipCrates")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtShipCrates", "con", V.Local.sSQL,True)
+F.Data.DataTable.AddColumn("dtShipCrates", "SEL", "BOOLEAN")
+
+F.Data.DataTable.SetValue("dtShipCrates", -1, "SEL", 0)
+
+Gui.f_Pcking_Crate.GsGcCrates.AddGridviewFromDatatable("gvShipCrates", "dtShipCrates")
+Gui.f_Pcking_Crate.GsGcCrates.SetGridviewProperty("gvShipCrates", "AllowColumnResizing", False)
+Gui.f_Pcking_Crate.GsGcCrates.SetGridviewProperty("gvShipCrates", "AllowColumnMoving", False)
+Gui.f_Pcking_Crate.GsGcCrates.SetGridviewProperty("gvShipCrates", "ShowgroupPanel", False)
+Gui.f_Pcking_Crate.GsGcCrates.SetGridviewProperty("gvShipCrates", "AllowAddRows", False)
+Gui.f_Pcking_Crate.GsGcCrates.SetGridviewProperty("gvShipCrates", "AllowDeleteRows", False)
+Gui.f_Pcking_Crate.GsGcCrates.SetGridviewProperty("gvShipCrates", "OptionsViewColumnAutoWidth", True)
+Gui.f_Pcking_Crate.GsGcCrates.SetGridviewProperty("gvShipCrates", "MultiSelect", True)
+
+V.Local.sProperty.Set("VisibleIndex")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, 0)
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "CRATE_NO", V.Local.sProperty, 1)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "CRATE_NO", V.Local.sProperty, "Crate ID")
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "CRATE_NO", V.Local.sProperty, v.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "CRATE_NO", V.Local.sProperty, v.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, False)
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "CRATE_NO", V.Local.sProperty, v.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, True)
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "CRATE_NO", V.Local.sProperty, v.Local.sDefault)
+
+V.Local.sProperty.Set("MinWidth")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, 30)
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "CRATE_NO", V.Local.sProperty, 100)
+
+V.Local.sProperty.Set("MaxWidth")
+Gui.f_Pcking_Crate.GsGcCrates.SetColumnProperty("gvShipCrates", "SEL", V.Local.sProperty, 30)
+
+Gui.f_Pcking_Crate.GsGcCrates.MainView("gvShipCrates")
+
+V.Local.sSQL.Set("SELECT TOP 1 SHIPMENT_ID FROM GCG_6232_PANEL_CRATE ORDER BY SHIPMENT_ID DESC")
+F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sShipmentID)
+F.Intrinsic.Control.If(V.Local.sShipmentID,<>,"")
+	F.Intrinsic.Math.Add(V.Local.sShipmentID.Long, 1, V.Local.iShipmentID)
+F.Intrinsic.Control.Else
+	V.Local.iShipmentID.Set(001)
+F.Intrinsic.Control.EndIf
+
+Gui.f_Pcking_Crate.txtNextShip.Text(V.Local.iShipmentID)
+
+Gui.f_Pcking_Crate..Show
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPckingList_Click.End
+
+Program.Sub.cmdShip_Click.Start
+F.Intrinsic.Control.Try
+V.Local.dDate.Declare(String)
+V.Local.iCnt.Declare(Long)
+V.Local.iCrateNo.Declare(Long)
+V.Local.iRunID.Declare(Long)
+V.Local.iLogID.Declare(Long)
+V.Local.iReportRun.Declare(Long)
+V.Local.iShipmentID.Declare(Long)
+V.Local.iReportID.Declare(Long)
+v.Local.sCrateNo.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sShipmentID.Declare(String)
+V.Local.sShippedFlag.Declare(String)
+V.Local.sShipDate.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sParamValues.Declare(String)
+V.Local.sDate.Declare(String)
+
+
+V.Local.sWO.Set(V.Screen.f_Crate!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWO,"-", v.Local.sWO)
+V.Local.sJob.Set(V.Local.sWO(0).Trim)
+V.Local.sSuffix.Set(v.Local.sWO(1).Trim)
+
+V.Local.sSQL.Set("SELECT TOP 1 SHIPMENT_ID FROM GCG_6232_PANEL_CRATE ORDER BY SHIPMENT_ID DESC")
+F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sShipmentID)
+F.Intrinsic.Control.If(V.Local.sShipmentID,<>,"")
+	F.Intrinsic.Math.Add(V.Local.sShipmentID.Long, 1, V.Local.iShipmentID)
+F.Intrinsic.Control.Else
+	V.Local.iShipmentID.Set(001)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.For(V.Local.iCnt,0, v.DataTable.dtShipCrates.RowCount--,1)
+	F.Intrinsic.Control.If(v.DataTable.dtShipCrates(v.Local.iCnt).SEL!FieldVal,=,True)
+		V.Local.iCrateNo.Set(V.DataTable.dtShipCrates(V.Local.iCnt).CRATE_NO!Fieldval)
+		F.Intrinsic.String.Build("UPDATE GCG_6232_PANEL_CRATE SET SHIPMENT_ID = '{0}', SHIPPED_FLAG = 'Y', SHIPPED_DATE = '{1}' WHERE JOB = '{2}' AND SUFFIX = '{3}' AND CRATE_NO = '{4}' ", V.Local.iShipmentID, V.Ambient.Date.PervasiveDate, V.Local.sJob.Trim, V.Local.sSuffix.Trim,V.Local.iCrateNo, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Data.DataTable.DeleteRow("dtShipCrates", V.Local.iCnt)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+Gui.f_Pcking_Crate..Enabled(False)
+'print the report
+F.Global.BI.GetRunID(V.Local.iRunID)
+F.Global.BI.GetIDFromName("GCG_6232_Packing_List.rpt", V.Local.iReportID)
+F.Global.BI.StartLogging(V.Local.iRunID,V.Local.iReportID, -1, "GCG_6232_Packing_List.rpt", V.Local.iLogID)
+F.Global.BI.StopLogging(V.Local.iLogID)
+
+V.Local.dDate.Set(V.Ambient.Date)
+F.Intrinsic.String.Format(v.Local.dDate, "MM/DD/YYYY", V.Local.dDate)
+F.Intrinsic.String.Build("{0}*!*{1}",V.Local.iShipmentID, V.Local.dDate, V.Local.sParamValues)
+F.Global.BI.RunReportPreProcessor(V.Local.iRunID, v.Local.iLogID,"SHIPMENT_ID*!*SHIP_DATE", V.Local.sParamValues, "GCG_6232_Packing_List.rpt", 16, True, "", -1,"",-1,"","", v.Local.iReportRun)
+
+
+F.Intrinsic.UI.Msgbox("Shipment Complete")
+Gui.f_Pcking_Crate..Enabled(True)
+Gui.f_Pcking_Crate..Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdShip_Click.End
+
+Program.Sub.f_Pcking_Crate_UnLoad.Start
+F.Intrinsic.Control.Try
+
+Gui.f_Pcking_Crate..Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_Pcking_Crate_UnLoad.End
+
+Program.Sub.cmdPrint_Click.Start
+F.Intrinsic.Control.Try
+V.Local.dDate.Declare(String)
+V.Local.iLogID.Declare(Long)
+V.Local.iReportID.Declare(Long)
+V.Local.iReportRun.Declare(Long)
+V.Local.iRunID.Declare(Long)
+V.Local.iShipmentID.Declare(Long)
+V.Local.sDate.Declare(String)
+V.Local.sParamValues.Declare(String)
+
+V.Local.iShipmentID.Set(V.Screen.f_Print!txtShipID.Text)
+V.Local.dDate.Set(v.Screen.f_Print!dtpShipDate.Value)
+
+
+F.Intrinsic.Control.If(V.Local.iShipmentID,=,"")
+	F.Intrinsic.UI.Msgbox("You must enter a Shipment ID to continue.", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	'print the report
+	F.Global.BI.GetRunID(V.Local.iRunID)
+	F.Global.BI.GetIDFromName("GCG_6232_Packing_List.rpt", V.Local.iReportID)
+	F.Global.BI.StartLogging(V.Local.iRunID,V.Local.iReportID, -1, "GCG_6232_Packing_List.rpt", V.Local.iLogID)
+	F.Global.BI.StopLogging(V.Local.iLogID)
+	
+	F.Intrinsic.String.Format(v.Local.dDate, "MM/DD/YYYY", V.Local.dDate)
+	F.Intrinsic.String.Build("{0}*!*{1}",V.Local.iShipmentID, V.Local.dDate, V.Local.sParamValues)
+	F.Global.BI.RunReportPreProcessor(V.Local.iRunID, v.Local.iLogID,"SHIPMENT_ID*!*SHIP_DATE", V.Local.sParamValues, "GCG_6232_Packing_List.rpt", 16, True, "", -1,"",-1,"","", v.Local.iReportRun)
+
+	Gui.f_Print.txtShipID.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.cmdCancel_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(Unload)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.iCnt2.Declare(Long)
+V.Local.fGoodPcs.Declare(Float,0.00)
+V.Local.fScrapPcs.Declare(Float,0.00)
+V.Local.fTotScrapPcs.Declare(Float,0.00)
+V.Local.sData.Declare(String)
+V.Local.sStatus.Declare(String)
+V.Local.sTemp.Declare(String)
+V.Local.sGoodPcs.Declare(String)
+V.Local.sScrapPcs.Declare(String)
+V.Local.sTemp2.Declare(String)
+
+F.Intrinsic.Control.If(V.Global.bDataLoaded,=,True)
+'loop through the datatables to get the qty for pass and for fail
+	F.Intrinsic.Control.If(V.Global.sOpCode.Trim,=,"SCAN", "OR", V.Global.sOpCode.Trim,=,"SHIP")
+		'update the qty on the update wo jobs screen
+		F.Intrinsic.BDF.ReadRow("UpdateJobsView-gvWOOperations-bdf", 0, V.Local.sTemp)
+		F.Intrinsic.String.Split(V.Local.sTemp, "|~|", V.Local.sTemp)
+		F.Intrinsic.Control.For(V.Local.iCnt2,V.Local.sTemp.LBound, V.Local.sTemp.UBound,1)
+			F.Intrinsic.Control.If(V.Local.iCnt2,=,0)
+				V.Local.sData.Set(V.Local.sTemp(V.Local.iCnt2).Trim)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.If(V.Local.iCnt2,=,2)
+					F.Intrinsic.String.Build("{0}|~|{1}", V.Local.sData, V.Global.sWC, V.Local.sData)
+				F.Intrinsic.Control.ElseIf(V.Local.iCnt2,=,3)
+					F.Intrinsic.String.Format(V.Global.fGoodPcs.Long,"0", V.Local.sTemp2)
+					F.Intrinsic.String.Build("{0}|~|{1}", V.Local.sData, V.Local.sTemp2, V.Local.sData)
+				F.Intrinsic.Control.ElseIf(V.Local.iCnt2,=,4)
+					F.Intrinsic.String.Format(V.Global.fScrapPcs.Long, "0", V.Local.sTemp2)
+					F.Intrinsic.String.Build("{0}|~|{1}", V.Local.sData, V.Local.sTemp2, V.Local.sData)
+				f.Intrinsic.Control.ElseIf(V.Local.iCnt2,=,10)
+					F.Intrinsic.String.Build("{0}|~|{1}", V.Local.sData, "0", V.Local.sData)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Build("{0}|~|{1}", V.Local.sData, V.Local.sTemp(V.Local.iCnt2).Trim, V.Local.sData)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt2)
+	
+		F.Intrinsic.BDF.WriteRow("TempBDF", V.Local.sData)
+		F.Intrinsic.BDF.Save("TempBDF", "UpdateJobsView-gvWOOperations-bdf")
+		'close the connection to the database
+		F.ODBC.Connection!con.Close
+
+		'end the script
+		F.Intrinsic.Control.End
+	
+	F.Intrinsic.Control.Else
+		'close the connection to the database
+		F.ODBC.Connection!con.Close
+
+		'end the script
+		F.Intrinsic.Control.End
+		
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Else
+	'close the connection to the database
+	F.ODBC.Connection!con.Close
+
+	'end the script
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Unload.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+'optional unattended parameters, those subs may not exist if not using them but won't be called
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Global.bError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+V.Global.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("UNATTENDED", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Control.If(V.Args.UNATTENDED)
+		F.Intrinsic.Control.CallSub(UnattendedErrorMessage, "MESSAGE", V.Local.sError, "PROJECT", V.Args.PROJECT, "PROJECTTITLE", V.Args.PROJECTTITLE)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.Comments.Start
+${$5$}$2.2019.1.105$}$1
+${$6$}$acollins$}$20211221131651668$}$h98hERc2yV72q0GaUGlwSaoK/aefTdVk/Cko6kf8J7Jd9TQy1KS+uVhJjEBdR0QiOmLy1ibbzhHLEGdVeduvQw==
+Program.Sub.Comments.End
