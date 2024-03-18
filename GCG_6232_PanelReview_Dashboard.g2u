@@ -1,0 +1,1316 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_Main..Create(BaseForm)
+Gui.f_Main..Caption("Panel Review (6232)")
+Gui.f_Main..Size(1173,897)
+Gui.f_Main..MinX(0)
+Gui.f_Main..MinY(0)
+Gui.f_Main..Position(0,0)
+Gui.f_Main..AlwaysOnTop(False)
+Gui.f_Main..FontName("Tahoma")
+Gui.f_Main..FontSize(8.25)
+Gui.f_Main..ControlBox(True)
+Gui.f_Main..MaxButton(True)
+Gui.f_Main..MinButton(True)
+Gui.f_Main..MousePointer(0)
+Gui.f_Main..Moveable(True)
+Gui.f_Main..Sizeable(True)
+Gui.f_Main..ShowInTaskBar(True)
+Gui.f_Main..TitleBar(True)
+Gui.f_Main..Event(UnLoad,Unload)
+Gui.f_Main.frameDates.Create(Frame)
+Gui.f_Main.frameDates.Enabled(True)
+Gui.f_Main.frameDates.Visible(True)
+Gui.f_Main.frameDates.Zorder(0)
+Gui.f_Main.frameDates.Size(351,61)
+Gui.f_Main.frameDates.Position(6,11)
+Gui.f_Main.frameDates.Caption("Panel Scan Date:")
+Gui.f_Main.frameDates.FontName("Tahoma")
+Gui.f_Main.frameDates.FontSize(8.25)
+Gui.f_Main.frameDates.BorderStyle(3)
+Gui.f_Main.lblBegDate.Create(Label,"Start Date:",True,54,13,0,9,18,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblBegDate.BorderStyle(0)
+Gui.f_Main.lblBegDate.Parent("frameDates")
+Gui.f_Main.dtpBegDate.Create(DatePicker)
+Gui.f_Main.dtpBegDate.Enabled(True)
+Gui.f_Main.dtpBegDate.Visible(True)
+Gui.f_Main.dtpBegDate.Zorder(0)
+Gui.f_Main.dtpBegDate.Size(100,20)
+Gui.f_Main.dtpBegDate.Position(9,34)
+Gui.f_Main.dtpBegDate.CheckBox(False)
+Gui.f_Main.dtpBegDate.FontName("Tahoma")
+Gui.f_Main.dtpBegDate.FontSize(8.25)
+Gui.f_Main.dtpBegDate.Parent("frameDates")
+Gui.f_Main.dtpEndDate.Create(DatePicker)
+Gui.f_Main.dtpEndDate.Enabled(True)
+Gui.f_Main.dtpEndDate.Visible(True)
+Gui.f_Main.dtpEndDate.Zorder(0)
+Gui.f_Main.dtpEndDate.Size(100,20)
+Gui.f_Main.dtpEndDate.Position(130,34)
+Gui.f_Main.dtpEndDate.CheckBox(False)
+Gui.f_Main.dtpEndDate.FontName("Tahoma")
+Gui.f_Main.dtpEndDate.FontSize(8.25)
+Gui.f_Main.dtpEndDate.Parent("frameDates")
+Gui.f_Main.chkAllDates.Create(CheckBox)
+Gui.f_Main.chkAllDates.Enabled(True)
+Gui.f_Main.chkAllDates.Visible(True)
+Gui.f_Main.chkAllDates.Zorder(0)
+Gui.f_Main.chkAllDates.Size(69,20)
+Gui.f_Main.chkAllDates.Position(238,34)
+Gui.f_Main.chkAllDates.Caption("All Dates")
+Gui.f_Main.chkAllDates.FontName("Tahoma")
+Gui.f_Main.chkAllDates.FontSize(8.25)
+Gui.f_Main.chkAllDates.Parent("frameDates")
+Gui.f_Main.chkAllDates.Event(Click,chkAllDates_Click)
+Gui.f_Main.cmdRefresh.Create(Button)
+Gui.f_Main.cmdRefresh.Enabled(True)
+Gui.f_Main.cmdRefresh.Visible(True)
+Gui.f_Main.cmdRefresh.Zorder(0)
+Gui.f_Main.cmdRefresh.Size(31,20)
+Gui.f_Main.cmdRefresh.Position(312,34)
+Gui.f_Main.cmdRefresh.Caption("REFRESH")
+Gui.f_Main.cmdRefresh.FontName("Tahoma")
+Gui.f_Main.cmdRefresh.FontSize(8.25)
+Gui.f_Main.cmdRefresh.Parent("frameDates")
+Gui.f_Main.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.f_Main.lblEndDate.Create(Label,"End Date:",True,48,13,0,130,18,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblEndDate.BorderStyle(0)
+Gui.f_Main.lblEndDate.Parent("frameDates")
+Gui.f_Main.cmdExport.Create(Button)
+Gui.f_Main.cmdExport.Enabled(True)
+Gui.f_Main.cmdExport.Visible(True)
+Gui.f_Main.cmdExport.Zorder(0)
+Gui.f_Main.cmdExport.Size(75,23)
+Gui.f_Main.cmdExport.Position(1084,29)
+Gui.f_Main.cmdExport.Caption("Export")
+Gui.f_Main.cmdExport.FontName("Tahoma")
+Gui.f_Main.cmdExport.FontSize(8.25)
+Gui.f_Main.cmdExport.Event(Click,cmdExport_Click)
+Gui.f_Main.cmdExport.Anchor(9)
+Gui.f_Main.ScanningTab.Create(Tab)
+Gui.f_Main.ScanningTab.Enabled(True)
+Gui.f_Main.ScanningTab.Visible(True)
+Gui.f_Main.ScanningTab.Zorder(0)
+Gui.f_Main.ScanningTab.Size(1173,786)
+Gui.f_Main.ScanningTab.Position(0,81)
+Gui.f_Main.ScanningTab.FontName("Tahoma")
+Gui.f_Main.ScanningTab.FontSize(8.25)
+Gui.f_Main.ScanningTab.Dock(2)
+Gui.f_Main.ScanningTab.Anchor(15)
+Gui.f_Main.ScanningTab.Tabs(2)
+Gui.f_Main.ScanningTab.SetTab(0)
+Gui.f_Main.ScanningTab.Caption("Scanning Detail")
+Gui.f_Main.ScanningTab.SetTab(1)
+Gui.f_Main.ScanningTab.Caption("Panel Information")
+Gui.f_Main.SplitContainer.Create(SplitContainer)
+Gui.f_Main.SplitContainer.Enabled(True)
+Gui.f_Main.SplitContainer.Visible(True)
+Gui.f_Main.SplitContainer.Zorder(0)
+Gui.f_Main.SplitContainer.Size(1171,748)
+Gui.f_Main.SplitContainer.Position(0,0)
+Gui.f_Main.SplitContainer.Orientation(1)
+Gui.f_Main.SplitContainer.SplitterPosition(440)
+Gui.f_Main.SplitContainer.Collapsed(False)
+Gui.f_Main.SplitContainer.Anchor(15)
+Gui.f_Main.SplitContainer.Parent("ScanningTab",0)
+Gui.f_Main.SplitContainer.Dock(5)
+Gui.f_Main.frameScan.Create(Frame)
+Gui.f_Main.frameScan.Enabled(True)
+Gui.f_Main.frameScan.Visible(True)
+Gui.f_Main.frameScan.Zorder(2)
+Gui.f_Main.frameScan.Size(1163,440)
+Gui.f_Main.frameScan.Position(0,0)
+Gui.f_Main.frameScan.Caption("Panel Scanning Detail")
+Gui.f_Main.frameScan.FontName("Tahoma")
+Gui.f_Main.frameScan.FontSize(8.25)
+Gui.f_Main.frameScan.BorderStyle(2)
+Gui.f_Main.frameScan.Anchor(15)
+Gui.f_Main.frameScan.Parent("SplitContainer",0)
+Gui.f_Main.frameScan.Dock(5)
+Gui.f_Main.GsGcPanel.Create(GsGridControl)
+Gui.f_Main.GsGcPanel.Enabled(True)
+Gui.f_Main.GsGcPanel.Visible(True)
+Gui.f_Main.GsGcPanel.Zorder(0)
+Gui.f_Main.GsGcPanel.Size(1171,414)
+Gui.f_Main.GsGcPanel.Position(0,26)
+Gui.f_Main.GsGcPanel.Dock(5)
+Gui.f_Main.GsGcPanel.Anchor(15)
+Gui.f_Main.GsGcPanel.Parent("frameScan")
+Gui.f_Main.GsGcPanel.Event(RowClick,GsGcPanel_RowClick)
+Gui.f_Main.frameCrate.Create(Frame)
+Gui.f_Main.frameCrate.Enabled(True)
+Gui.f_Main.frameCrate.Visible(True)
+Gui.f_Main.frameCrate.Zorder(0)
+Gui.f_Main.frameCrate.Size(1163,308)
+Gui.f_Main.frameCrate.Position(0,0)
+Gui.f_Main.frameCrate.Caption("Panel Crating Detail")
+Gui.f_Main.frameCrate.FontName("Tahoma")
+Gui.f_Main.frameCrate.FontSize(8.25)
+Gui.f_Main.frameCrate.BorderStyle(2)
+Gui.f_Main.frameCrate.Anchor(14)
+Gui.f_Main.frameCrate.Parent("SplitContainer",1)
+Gui.f_Main.frameCrate.Dock(5)
+Gui.f_Main.GsGcCrate.Create(GsGridControl)
+Gui.f_Main.GsGcCrate.Enabled(True)
+Gui.f_Main.GsGcCrate.Visible(True)
+Gui.f_Main.GsGcCrate.Zorder(0)
+Gui.f_Main.GsGcCrate.Size(1171,270)
+Gui.f_Main.GsGcCrate.Position(0,26)
+Gui.f_Main.GsGcCrate.Anchor(15)
+Gui.f_Main.GsGcCrate.Parent("frameCrate")
+Gui.f_Main.GsGcCrate.Dock(5)
+Gui.f_Main.framePnlInfo.Create(Frame)
+Gui.f_Main.framePnlInfo.Enabled(True)
+Gui.f_Main.framePnlInfo.Visible(True)
+Gui.f_Main.framePnlInfo.Zorder(0)
+Gui.f_Main.framePnlInfo.Size(1171,748)
+Gui.f_Main.framePnlInfo.Position(0,0)
+Gui.f_Main.framePnlInfo.Caption("")
+Gui.f_Main.framePnlInfo.FontName("Tahoma")
+Gui.f_Main.framePnlInfo.FontSize(8.25)
+Gui.f_Main.framePnlInfo.Parent("ScanningTab",1)
+Gui.f_Main.framePnlInfo.Anchor(15)
+Gui.f_Main.framePnlInfo.Dock(5)
+Gui.f_Main.GsGcPnlInfo.Create(GsGridControl)
+Gui.f_Main.GsGcPnlInfo.Enabled(True)
+Gui.f_Main.GsGcPnlInfo.Visible(True)
+Gui.f_Main.GsGcPnlInfo.Zorder(0)
+Gui.f_Main.GsGcPnlInfo.Size(1171,743)
+Gui.f_Main.GsGcPnlInfo.Position(0,0)
+Gui.f_Main.GsGcPnlInfo.Anchor(15)
+Gui.f_Main.GsGcPnlInfo.Parent("framePnlInfo")
+Gui.f_Main.GsGcPnlInfo.Dock(5)
+Gui.f_Main.frameKey.Create(Frame)
+Gui.f_Main.frameKey.Enabled(True)
+Gui.f_Main.frameKey.Visible(True)
+Gui.f_Main.frameKey.Zorder(0)
+Gui.f_Main.frameKey.Size(152,68)
+Gui.f_Main.frameKey.Position(363,7)
+Gui.f_Main.frameKey.Caption("Key:")
+Gui.f_Main.frameKey.FontName("Tahoma")
+Gui.f_Main.frameKey.FontSize(8.25)
+Gui.f_Main.frameKey.BorderStyle(3)
+Gui.f_Main.txtMore.Create(TextBox,"Qty Scanned > Qty Req",False,138,18,0,8,43,True,2,"Tahoma",8.25,,0)
+Gui.f_Main.txtMore.Locked(True)
+Gui.f_Main.txtMore.Anchor(9)
+Gui.f_Main.txtMore.Parent("frameKey")
+Gui.f_Main.txtLess.Create(TextBox,"Qty Scanned < Qty Req",False,138,18,0,8,20,True,2,"Tahoma",8.25,,0)
+Gui.f_Main.txtLess.Locked(True)
+Gui.f_Main.txtLess.Anchor(9)
+Gui.f_Main.txtLess.Parent("frameKey")
+Gui.f_Main.lblWaitDialog.Create(Label,"",False,1,19,0,524,32,True,0,"Tahoma",12,,0,0)
+Gui.f_Main.lblWaitDialog.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bError.Declare(Boolean)
+V.Global.bUnattended.Declare(Boolean)
+V.Global.bLoadData.Declare(Boolean)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Edit by BixRB
+'28 Sept 2022
+'Added Find panel to all GridViews
+'Added AllDates Checkbox to not filter by Date
+'To compliment all dates. I reviewed the code and tried to optimize some loading of data to speed it up with moderate success :)
+F.Intrinsic.Control.Try
+
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass,5000)
+Gui.f_Main.txtLess.BackColor(V.Enum.ThemeColors!ColorRed.Highlight)
+Gui.f_Main.txtLess.Visible(True)
+Gui.f_Main.txtMore.BackColor(V.Enum.ThemeColors!ColorBlue.Highlight)
+Gui.f_Main.txtMore.Visible(True)
+
+F.Intrinsic.Control.If(V.Caller.Hook,=,49761)
+	Gui.f_Main.ScanningTab.SetTab(0)
+	Gui.f_Main..Show
+F.Intrinsic.Control.Else
+
+	Gui.f_Main.ScanningTab.SetTab(0)
+	Gui.f_Main..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.BlockEvents
+F.Intrinsic.Control.CallSub(LoadScanGrid)
+F.Intrinsic.Control.CallSub(FormatScanGrid)
+F.Intrinsic.Control.CallSub(LoadCrateGrid)
+F.Intrinsic.Control.CallSub(FormatCrateGrid)
+
+F.Intrinsic.Control.CallSub(LoadPanelInfoGrid)
+F.Intrinsic.Control.CallSub(FormatPanelInfoGrid)
+
+F.Intrinsic.Control.CallSub(Deserialize)
+F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.LoadScanGrid.Start
+F.Intrinsic.Control.Try
+V.Local.dDateScanned.Declare(Date)
+V.Local.fQty.Declare(Float)
+V.Local.iCnt.Declare(Long)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sPNL.Declare(String)
+V.Local.sFinish.Declare(String)
+V.Local.sStatus.Declare(String)
+V.Local.sOperation.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.dEndDate.Declare(Date)
+V.Local.dStartDate.Declare(Date)
+V.Local.sEndDate.Declare(String)
+V.Local.sStartDate.Declare(String)
+v.Local.sAssyWorkCenters.Declare(String)
+V.Local.sJS.Declare(String)
+V.Local.sTimeScanned.Declare(String)
+V.Local.sCNCWorkcenters.Declare(String)
+V.Local.sCRTWorkCenters.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iCrateID.Declare(String)
+V.Local.sJobExclude.Declare
+
+Gui.f_Main.lblWaitDialog.Visible(True)
+Gui.f_Main.lblWaitDialog.Caption("Loading Panel Review Information...")
+'F.Intrinsic.UI.InvokeWaitDialog("Loading Panel Review Information...", "Please Wait")
+V.Local.dStartDate.Set(V.Screen.f_Main!dtpBegDate.Value)
+F.Intrinsic.String.Format(V.Local.dStartDate, "YYYY-MM-DD", V.Local.sStartDate)
+V.Local.dEndDate.Set(V.Screen.f_Main!dtpEndDate.Value)
+F.Intrinsic.String.Format(V.Local.dEndDate, "YYYY-MM-DD", V.Local.sEndDate)
+
+'F.Intrinsic.String.Build("SELECT DISTINCT B.JOB, B.SUFFIX, (B.JOB + B.SUFFIX) AS 'JS', B.DATE_DUE, B.QTY_ORDER, IF(B.FLAG_WO_RELEASED = 'Y', QTY_ORDER, 0) AS 'QTY_SENT', 0.00 AS QTY_CUT, 0.00 AS QTY_ASSEMBLED, 0.00 AS QTY_CRATED, D.SHIPMENT_ID FROM  V_JOB_HEADER B  LEFT JOIN GCG_6232_PANEL_INFO C ON B.JOB = C.JOB AND B.SUFFIX = C.SUFFIX LEFT JOIN GCG_6232_PANEL_CRATE D ON C.JOB = D.JOB AND C.SUFFIX = D.SUFFIX LEFT JOIN GCG_6232_PNL_SCANS E ON B.JOB = E.JOB AND B.SUFFIX = E.SUFFIX WHERE E.DATE_SCANNED >= '{0}' AND E.DATE_SCANNED <= '{1}' ORDER BY B.JOB, B.SUFFIX", V.Local.sStartDate, V.Local.sEndDate, V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.Screen.f_Main!chkAllDates.CheckedAsBoolean)
+	V.Local.sSQL.Set("SELECT DISTINCT B.JOB, B.SUFFIX, (B.JOB + B.SUFFIX) AS 'JS', B.DATE_DUE, B.QTY_ORDER, 0.00 AS 'QTY_SENT', 0.00 AS QTY_CUT, 0.00 AS QTY_ASSEMBLED, 0.00 AS QTY_CLADLOK, 0.00 AS QTY_CRATED FROM GCG_6232_PNL_SCANS E LEFT JOIN V_JOB_HEADER B ON B.JOB = E.JOB AND B.SUFFIX = E.SUFFIX ORDER BY B.JOB, B.SUFFIX")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("SELECT DISTINCT B.JOB, B.SUFFIX, (B.JOB + B.SUFFIX) AS 'JS', B.DATE_DUE, B.QTY_ORDER, 0.00 AS 'QTY_SENT', 0.00 AS QTY_CUT, 0.00 AS QTY_ASSEMBLED, 0.00 AS QTY_CLADLOK, 0.00 AS QTY_CRATED FROM GCG_6232_PNL_SCANS E LEFT JOIN V_JOB_HEADER B ON B.JOB = E.JOB AND B.SUFFIX = E.SUFFIX WHERE E.DATE_SCANNED >= '{0}' AND E.DATE_SCANNED <= '{1}' ORDER BY B.JOB, B.SUFFIX", V.Local.sStartDate, V.Local.sEndDate, V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtPanels.Exists)
+	F.Data.DataTable.Close("dtPanels")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtPanels", "con", V.Local.sSQL, True)
+F.Data.DataTable.ColumnToString("dtPanels","JS",V.Local.sJobExclude)
+F.Intrinsic.String.Replace(V.Local.sJobExclude,"*!*","','",V.Local.sJobExclude)
+
+'Merge Null Job Records from Crate Scans
+F.Intrinsic.Control.If(V.Screen.f_Main!chkAllDates.CheckedAsBoolean)
+	F.Intrinsic.String.Build("SELECT DISTINCT B.JOB, B.SUFFIX, (B.JOB + B.SUFFIX) AS 'JS', B.DATE_DUE, B.QTY_ORDER, 0.00 AS 'QTY_SENT', 0.00 AS QTY_CUT, 0.00 AS QTY_ASSEMBLED, 0.00 AS QTY_CLADLOK, 0.00 AS QTY_CRATED FROM GCG_6232_PANEL_CRATE E LEFT JOIN V_JOB_HEADER B ON B.JOB = E.JOB AND B.SUFFIX = E.SUFFIX where JS not in ('{0}') ORDER BY B.JOB, B.SUFFIX",V.Local.sJobExclude,V.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("SELECT DISTINCT B.JOB, B.SUFFIX, (B.JOB + B.SUFFIX) AS 'JS', B.DATE_DUE, B.QTY_ORDER, 0.00 AS 'QTY_SENT', 0.00 AS QTY_CUT, 0.00 AS QTY_ASSEMBLED, 0.00 AS QTY_CLADLOK, 0.00 AS QTY_CRATED FROM GCG_6232_PANEL_CRATE E LEFT JOIN V_JOB_HEADER B ON B.JOB = E.JOB AND B.SUFFIX = E.SUFFIX WHERE E.SHIPPED_DATE >= '{0}' AND E.SHIPPED_DATE <= '{1}' and JS not in ('{2}') ORDER BY B.JOB, B.SUFFIX", V.Local.sStartDate, V.Local.sEndDate,V.Local.sJobExclude, V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtPanelTemp","con",V.Local.sSQL)
+F.Data.DataTable.Merge("dtPanelTemp","dtPanels",True,2)
+F.Data.DataTable.Close("dtPanelTemp")
+
+'V.Local.sSQL.Set("SELECT WORKCENTER FROM V_WORKGROUP_LINE WHERE WORKGROUP ")
+'F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sCNCWorkcenters)
+
+F.Data.Dictionary.CreateFromSQL("dictSent", "con", "SELECT (RTRIM(LTRIM(JOB)) + RTRIM(LTRIM(SUFFIX))) AS 'JS', SUM(QTY) AS QTY_SENT FROM GCG_6232_PANEL_INFO GROUP BY JS")
+F.Data.Dictionary.SetDefaultReturn("dictSent", 0.00)
+F.Data.DataTable.FillFromDictionary("dtPanels", "dictSent", "JS", "QTY_SENT")
+F.Data.Dictionary.Close("dictSent")
+
+F.Data.Dictionary.CreateFromSQL("dictCrate", "con", "SELECT (RTRIM(LTRIM(JOB)) + RTRIM(LTRIM(SUFFIX))) AS 'JS', SUM(QTY) AS QTY_CRATED FROM GCG_6232_PANEL_CRATE GROUP BY JS")
+F.Data.Dictionary.SetDefaultReturn("dictCrate", 0.00)
+F.Data.DataTable.FillFromDictionary("dtPanels", "dictCrate", "JS", "QTY_CRATED")
+F.Data.Dictionary.Close("dictCrate")
+
+F.Data.Dictionary.CreateFromSQL("dictCut", "con","SELECT (B.JOB + A.SUFFIX) AS 'JS', SUM(QTY) AS QTY_CUT FROM GCG_6232_PNL_SCANS A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.SEQUENCE = B.SEQ WHERE RTRIM(LTRIM(B.PART)) = 'CNC1' GROUP BY JS, A.SEQUENCE")
+F.Data.Dictionary.SetDefaultReturn("dictCut", 0.00)
+F.Data.DataTable.FillFromDictionary("dtPanels", "dictCut", "JS", "QTY_CUT")
+F.Data.Dictionary.Close("dictCut")
+
+V.Local.sSQL.Set("SELECT WORKCENTER FROM V_WORKGROUP_LINE WHERE WORKGROUP = 'ASSY' ORDER BY WORKCENTER")
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sAssyWorkCenters)
+F.Intrinsic.Control.If(V.Local.sAssyWorkCenters.Trim,<>,"")
+	F.Intrinsic.String.Replace(V.Local.sAssyWorkCenters,"#$#", "','", V.Local.sAssyWorkCenters)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("SELECT (B.JOB + A.SUFFIX) AS 'JS', SUM(QTY) AS QTY_ASSEMBLED FROM GCG_6232_PNL_SCANS A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.SEQUENCE = B.SEQ WHERE B.PART IN ('{0}') OR B.PART IN ('FOLD') GROUP BY JS", v.Local.sAssyWorkCenters.Trim, v.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	F.Data.Dictionary.CreateFromSQL("dictAssy", "con", v.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Data.Dictionary.CreateFromSQL("dictAssy", "con", "SELECT (B.JOB + A.SUFFIX) AS 'JS', SUM(QTY) AS QTY_ASSEMBLED FROM GCG_6232_PNL_SCANS A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.SEQUENCE = B.SEQ WHERE (B.PART = 'ASSY' OR B.PART = 'FOLD') GROUP BY JS, A.SEQUENCE")
+F.Intrinsic.Control.EndIf
+F.Data.Dictionary.SetDefaultReturn("dictAssy", 0.00)
+F.Data.DataTable.FillFromDictionary("dtPanels", "dictAssy", "JS", "QTY_ASSEMBLED")
+F.Data.Dictionary.Close("dictAssy")
+
+F.Data.Dictionary.CreateFromSQL("dictLaser", "con","SELECT (B.JOB + A.SUFFIX) AS 'JS', SUM(QTY) AS QTY_CLADLOK FROM GCG_6232_PNL_SCANS A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.SEQUENCE = B.SEQ WHERE RTRIM(LTRIM(B.PART)) = 'L3P2' GROUP BY JS, A.SEQUENCE")
+F.Data.Dictionary.SetDefaultReturn("dictLaser", 0.00)
+F.Data.DataTable.FillFromDictionary("dtPanels", "dictLaser", "JS", "QTY_CLADLOK")
+F.Data.Dictionary.Close("dictLaser")
+
+F.Intrinsic.Control.If(V.DataTable.dtPanels.RowCount--,>,-1)
+	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtPanels.RowCount--,1)
+		F.Intrinsic.Control.If(V.Local.iCnt,=,0)
+			V.Local.sJS.Set(V.DataTable.dtPanels(V.Local.iCnt).JS!FieldValtrim)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}','{1}", V.Local.sJS.Trim, V.DataTable.dtPanels(V.Local.iCnt).JS!FieldValtrim, V.Local.sJS)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("SELECT A.JOB, A.SUFFIX, (ltrim(rtrim(A.JOB)) + ltrim(rtrim(A.SUFFIX))) AS 'JS', A.SEQUENCE, B.PART AS OPERATION, A.PNL_ID, A.FINISH, A.STATUS, A.QTY, IF(A.DATE_SCANNED IS NULL, '1900-01-01', A.DATE_SCANNED) AS DATE_SCANNED, A.TIME_SCANNED FROM GCG_6232_PNL_SCANS A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.SEQUENCE = B.SEQ  WHERE JS IN ('{0}') ORDER BY A.SEQUENCE, A.PNL_ID", V.Local.sJS.Trim, V.Local.sSQL)
+
+'creating child datatable
+F.Data.DataTable.CreateFromSQL("dtPanels$dtChildInfo", "con", V.Local.sSQL, True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadScanGrid.End
+
+Program.Sub.FormatScanGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sDefault.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+
+
+Gui.f_Main.GsGcPanel.AddGridviewFromDatatable("gvPanels", "dtPanels")
+V.Local.sGV.Set("gvPanels")
+
+Gui.f_Main.GsGcPanel.SetGridviewProperty(V.Local.sGV, "AllowSort", True)
+Gui.f_Main.GsGcPanel.SetGridviewProperty(V.Local.sGV, "AllowFilter", True)
+Gui.f_Main.GsGcPanel.SetGridviewProperty(V.Local.sGV, "OptionsViewShowGroupPanel", False)
+Gui.f_Main.GsGcPanel.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+Gui.f_Main.GsGcPanel.SetGridviewProperty(V.Local.sGV, "MultiSelect", False)
+Gui.f_Main.GsGcPanel.SetGridviewProperty(V.Local.sGV, V.Enum.GridViewPropertyNames!FindAlwaysVisible, True)
+Gui.f_Main.GsGcPanel.SetGridviewPrintOptions(V.Local.sGV, "printdetails", True)
+
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "JS", "Visible", False)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, "Job")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, "Suffix")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "DATE_DUE", V.Local.sProperty, "Due Date")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ORDER", V.Local.sProperty, "Order Qty")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_SENT", V.Local.sProperty, "Import Qty")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CUT", V.Local.sProperty, "Qty Cut")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ASSEMBLED", V.Local.sProperty, "Qty Assembled")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CLADLOK", V.Local.sProperty, "Cladlok Qty")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, "Qty Crated")
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "DATE_DUE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ORDER", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_SENT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CUT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ASSEMBLED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CLADLOK", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "DATE_DUE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ORDER", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_SENT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CUT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ASSEMBLED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CLADLOK", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "DATE_DUE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ORDER", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_SENT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CUT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ASSEMBLED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CLADLOK", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "DATE_DUE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ORDER", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_SENT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CUT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ASSEMBLED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CLADLOK", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("MinWidth")
+V.Local.sDefault.Set("100")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "DATE_DUE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ORDER", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_SENT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CUT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ASSEMBLED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CLADLOK", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomDateTime")
+V.Local.sDefault.Set("d")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "DATE_DUE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ORDER", V.Local.sProperty, "#,###,###,##0.00")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_SENT", V.Local.sProperty, "#,###,###,##0.00")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CUT", V.Local.sProperty, "#,###,###,##0.00")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_ASSEMBLED", V.Local.sProperty, "#,###,###,##0.00")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CLADLOK", V.Local.sProperty,"#,###,###,##0.00")
+Gui.f_Main.GsGcPanel.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, "#,###,###,##0.00")
+
+
+
+Gui.f_Main.GsGcPanel.AddGridviewFromDatatable("gvChildInfo", "dtPanels$dtChildInfo")
+Gui.f_Main.GsGcPanel.SetGridviewPrintOptions("gvChildInfo", "printdetails", True)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "JOB", "Visible", False)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SUFFIX", "Visible", False)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "JS", "Visible", False)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SEQUENCE", V.Local.sProperty, "Sequence")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "OPERATION", V.Local.sProperty, "Operation")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "PNL_ID", V.Local.sProperty, "Panel ID")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "FINISH", V.Local.sProperty, "Finish")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "STATUS", V.Local.sProperty, "Status")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, "Qty Scanned")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty, "Date Scanned")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, "Time Scanned")
+
+V.Local.sProperty.Set("HeaderBackColor")
+V.Local.sDefault.Set("Green")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SEQUENCE", V.Local.sProperty,V.Enum.ThemeColors!GssGreen)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "OPERATION", V.Local.sProperty, V.Enum.ThemeColors!GssGreen)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "PNL_ID", V.Local.sProperty, V.Enum.ThemeColors!GssGreen)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "FINISH", V.Local.sProperty, V.Enum.ThemeColors!GssGreen)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "STATUS", V.Local.sProperty, V.Enum.ThemeColors!GssGreen)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, V.Enum.ThemeColors!GssGreen)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty,V.Enum.ThemeColors!GssGreen)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, V.Enum.ThemeColors!GssGreen)
+
+V.Local.sProperty.Set("HeaderForeColor")
+V.Local.sDefault.Set("White")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "STATUS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "STATUS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "STATUS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, V.Local.sDefault)
+
+'V.Local.sProperty.Set("MinWidth")
+'V.Local.sDefault.Set("85")
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SEQUENCE", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "OPERATION", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "PNL_ID", V.Local.sProperty, 200)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "FINISH", V.Local.sProperty, 300)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "STATUS", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty,100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, 100)
+
+'V.Local.sProperty.Set("MaxWidth")
+'V.Local.sDefault.Set("85")
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "SEQUENCE", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "OPERATION", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "PNL_ID", V.Local.sProperty, 200)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "FINISH", V.Local.sProperty, 300)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "STATUS", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, 100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty,100)
+'Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, 100)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "QTY", V.Local.sProperty, "#,###,###,##0.00")
+
+V.Local.sProperty.Set("DisplayCustomDatetime")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "DATE_SCANNED", V.Local.sProperty, "d")
+Gui.f_Main.GsGcPanel.SetColumnProperty("gvChildInfo", "TIME_SCANNED", V.Local.sProperty, "T")
+
+
+F.Intrinsic.Control.If(V.DataTable.dtPanels.RowCount--,>,-1)
+	Gui.f_Main.GsGcPanel.AddRelation(V.Local.sGV, "gvChildInfo","JS", "JS", "JobRel")
+F.Intrinsic.Control.EndIf
+
+Gui.f_Main.GsGcPanel.MainView(V.Local.sGV)
+
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatScanGrid.End
+
+Program.Sub.LoadCrateGrid.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.Control.If(V.DataTable.dtCrateInfo.Exists)
+	F.Data.DataTable.Close("dtCrateInfo")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Create("dtCrateInfo", True)
+F.Data.DataTable.AddColumn("dtCrateInfo", "JOB", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo", "SUFFIX", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo", "JS", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo", "CRATE_NO", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo", "SHIPMENT_ID", "LONG")
+F.Data.DataTable.AddColumn("dtCrateInfo", "SHIPMENT_DATE", "DATE")
+F.Data.DataTable.AddColumn("dtCrateInfo", "QTY_CRATED", "FLOAT")
+
+'creating child datatable
+F.Data.DataTable.AddTable("dtCrateInfo", "dtChildCrateInfo")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "JOB", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "SUFFIX", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "SEQUENCE", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "OPERATION", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "CRATE_NO", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "SHIPMENT_ID", "LONG")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "PNL_ID", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "FINISH", "STRING")
+F.Data.DataTable.AddColumn("dtCrateInfo$dtChildCrateInfo", "QTY", "FLOAT")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadCrateGrid.End
+
+Program.Sub.FormatCrateGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sDefault.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+
+Gui.f_Main.GsGcCrate.AddGridviewFromDatatable("gvCrate", "dtCrateInfo")
+V.Local.sGV.Set("gvCrate")
+Gui.f_Main.GsGcCrate.SetGridviewProperty(V.Local.sGV, "AllowSort", True)
+Gui.f_Main.GsGcCrate.SetGridviewProperty(V.Local.sGV, "AllowFilter", True)
+Gui.f_Main.GsGcCrate.SetGridviewProperty(V.Local.sGV, "OptionsViewShowGroupPanel", False)
+Gui.f_Main.GsGcCrate.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+Gui.f_Main.GsGcCrate.SetGridviewProperty(V.Local.sGV, V.Enum.GridViewPropertyNames!FindAlwaysVisible, True)
+Gui.f_Main.GsGcCrate.SetGridviewPrintOptions(V.Local.sGV, "printdetails", True)
+
+
+V.Local.sProperty.Set("Visible")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "JS", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, "Job")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, "Suffix")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "CRATE_NO", V.Local.sProperty, "Crate")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", V.Local.sProperty, "Shipment ID")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_DATE", V.Local.sProperty, "Shipment Date")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, "Quantity Crated")
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "CRATE_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "CRATE_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "CRATE_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "CRATE_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomDateTime")
+V.Local.sDefault.Set("d")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_DATE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY_CRATED", V.Local.sProperty, "#,###,###,##0.00")
+
+'formatting child datatable
+Gui.f_Main.GsGcCrate.AddGridviewFromDatatable("gvChildCrateInfo", "dtCrateInfo$dtChildCrateInfo")
+V.Local.sGV.Set("gvChildCrateInfo")
+Gui.f_Main.GsGcCrate.SetGridviewPrintOptions(V.Local.sGV, "printdetails", True)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "JOB", "Visible", "False")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SUFFIX", "Visible", "False")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "CRATE_NO", "Visible", "False")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SHIPMENT_ID", "Visible", "False")
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, "Sequence")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "OPERATION", V.Local.sProperty, "Operation")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, "Panel ID")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, "Finish")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, "Quantity")
+
+V.Local.sProperty.Set("HeaderBackColor")
+V.Local.sDefault.Set("Green")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderForeColor")
+V.Local.sDefault.Set("White")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "FINISH", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+Gui.f_Main.GsGcCrate.SetColumnProperty(V.Local.sGV, "QTY", V.Local.sProperty," #,###,###,##0.00")
+
+
+
+Gui.f_Main.GsGcCrate.AddRelation("gvCrate", "gvChildCrateInfo", "JOB*!*SUFFIX*!*CRATE_NO*!*SHIPMENT_ID", "JOB*!*SUFFIX*!*CRATE_NO*!*SHIPMENT_ID", "JobRel")
+
+
+Gui.f_Main.GsGcCrate.MainView("gvCrate")
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatCrateGrid.End
+
+Program.Sub.LoadPanelInfoGrid.Start
+F.Intrinsic.Control.Try
+V.Local.dEndDate.Declare(Date)
+v.Local.dStartDate.Declare(Date)
+V.Local.fQtyReq.Declare(Float)
+V.Local.fQtyScan.Declare(Float)
+V.Local.iCnt.Declare(Long)
+V.Local.sEndDate.Declare(String)
+V.Local.sJob.Declare(String)
+v.Local.sJS.Declare(String)
+V.Local.sOperation.Declare(String)
+V.Local.sPNL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sStartDate.Declare(String)
+V.Local.sSuffix.Declare(String)
+
+
+V.Local.dStartDate.Set(V.Screen.f_Main!dtpBegDate.Value)
+F.Intrinsic.String.Format(V.Local.dStartDate, "YYYY-MM-DD", V.Local.sStartDate)
+V.Local.dEndDate.Set(V.Screen.f_Main!dtpEndDate.Value)
+F.Intrinsic.String.Format(V.Local.dEndDate, "YYYY-MM-DD", V.Local.sEndDate)
+
+F.Intrinsic.Control.If(V.Screen.f_Main!chkAllDates.CheckedAsBoolean)
+	V.Local.sSQL.Set("SELECT DISTINCT JOB, SUFFIX , (ltrim(rtrim(JOB)) + ltrim(rtrim(SUFFIX))) AS 'JS' FROM GCG_6232_PANEL_INFO ORDER BY JOB,SUFFIX")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("SELECT DISTINCT JOB, SUFFIX , (ltrim(rtrim(JOB)) + ltrim(rtrim(SUFFIX))) AS 'JS' FROM GCG_6232_PANEL_INFO WHERE DATE_CREATED >= '{0}' AND DATE_CREATED <= '{1}' ORDER BY JOB,SUFFIX", V.Local.sStartDate, V.Local.sEndDate, V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtPanelImport.Exists)
+	F.Data.DataTable.Close("dtPanelImport")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPanelImport", "con", V.Local.sSQL, True)
+
+
+F.Intrinsic.Control.If(V.DataTable.dtPanelImport.RowCount--,>,-1)
+	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtPanelImport.RowCount--,1)
+		F.Intrinsic.Control.If(V.Local.iCnt,=,0)
+			V.Local.sJS.Set(V.DataTable.dtPanelImport(V.Local.iCnt).JS!FieldValTrim)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}','{1}", V.Local.sJS.Trim, V.DataTable.dtPanelImport(V.Local.iCnt).JS!FieldValTrim, V.Local.sJS)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.String.Build("SELECT A.JOB, A.SUFFIX, (ltrim(rtrim(A.JOB)) + ltrim(rtrim(A.SUFFIX))) AS 'JS', A.PNL AS PNL_ID, B.SEQUENCE, C.PART AS OPERATION, if(B.QTY IS NULL, 0.00, B.QTY) AS QTY_SCANNED, A.QTY AS QTY_REQ FROM GCG_6232_PANEL_INFO A LEFT JOIN GCG_6232_PNL_SCANS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.PNL = B.PNL_ID LEFT JOIN V_JOB_OPERATIONS C ON B.JOB = C.JOB AND B.SUFFIX = C.SUFFIX AND B.SEQUENCE = C.SEQ WHERE JS IN ('{0}')  ORDER BY A.PNL, B.SEQUENCE", V.Local.sJS.Trim, V.Local.sSQL)
+
+''Create child datatable
+'F.Data.DataTable.CreateFromSQL("dtPanelImport$dtChildImport", "con", V.Local.sSQL, True)
+
+'F.Intrinsic.Control.If(V.DataTable.dtCrateImport.Exists)
+'	F.Data.DataTable.Close("dtCrateImport")
+'F.Intrinsic.Control.EndIf
+'This is super slow, so I am going to work some Bix Patented Linq.Join dark magic to make this faster
+'F.Intrinsic.String.Build("SELECT A.JOB, A.SUFFIX, (ltrim(rtrim(A.JOB)) + ltrim(rtrim(A.SUFFIX))) AS 'JS', A.PNL AS PNL_ID, B.SEQUENCE, C.PART AS OPERATION, if(SUM(B.QTY) IS NULL, 0.00, SUM(B.QTY)) AS QTY_SCANNED, A.QTY AS QTY_REQ FROM GCG_6232_PANEL_INFO A LEFT JOIN GCG_6232_PANEL_CRATE B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.PNL = B.PNL_ID LEFT JOIN V_JOB_OPERATIONS C ON B.JOB = C.JOB AND B.SUFFIX = C.SUFFIX AND B.SEQUENCE = C.SEQ WHERE JS IN ('{0}') GROUP BY A.JOB, A.SUFFIX, JS, A.PNL, B.SEQUENCE, C.PART, A.QTY ORDER BY A.PNL, B.SEQUENCE", V.Local.sJS.Trim, V.Local.sSQL)
+'f.Data.DataTable.CreateFromSQL("dtCrateImport", "con", V.Local.sSQL,True)
+
+F.Intrinsic.String.Build("select JOB, SUFFIX, (ltrim(rtrim(JOB)) + ltrim(rtrim(SUFFIX))) AS 'JS', PNL as PNL_ID, QTY as QTY_REQ from GCG_6232_PANEL_INFO where JS in ('{0}')",V.Local.sJS,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtPANELINFO","con",V.Local.sSQL,True)
+F.Intrinsic.String.Build("select JOB, SUFFIX, (ltrim(rtrim(JOB)) + ltrim(rtrim(SUFFIX))) AS 'JS', PNL_ID, SEQUENCE, if(SUM(QTY) IS NULL, 0.00, SUM(QTY)) AS QTY_SCANNED from GCG_6232_PANEL_CRATE where JS in ('{0}') group by JOB,SUFFIX,PNL_ID,SEQUENCE",V.Local.sJS,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtPANELCRATE","con",V.Local.sSQL,True)
+F.Intrinsic.String.Build("select JOB, SUFFIX, (ltrim(rtrim(JOB)) + ltrim(rtrim(SUFFIX))) AS 'JS', PNL_ID, SEQUENCE, if(SUM(QTY) IS NULL, 0.00, SUM(QTY)) AS QTY_SCANNED from GCG_6232_PNL_SCANS where JS in ('{0}') group by JOB,SUFFIX,PNL_ID,SEQUENCE",V.Local.sJS,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtPANELSCANS","con",V.Local.sSQL,True)
+F.Data.DataTable.Merge("dtPANELSCANS","dtPANELCRATE",True,2)
+F.Data.DataTable.Close("dtPANELSCANS")
+F.Intrinsic.String.Build("select JOB, SUFFIX, (ltrim(rtrim(JOB)) + ltrim(rtrim(SUFFIX))) AS 'JS', SEQ, PART as OPERATION from JOB_OPERATIONS where JS in ('{0}')",V.Local.sJS,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtJOBOPERATIONS","con",V.Local.sSQL,True)
+
+'F.Data.Linq.Join(V.Enum.LinqJoinType!LeftJoin,V.Enum.LinqSourceType!DataTable,"dtPANELINFO*!*INFO",V.Enum.LinqSourceType!DataTable,"dtPANELCRATE*!*SCAN","INFO.JS = SCAN.JS",V.Enum.LinqSourceType!DataTable,"dtJOBOPERATIONS*!*OPER","INFO.JS = OPER.JS and SCAN.SEQUENCE = OPER.SEQ","INFO.JOB*!*INFO.SUFFIX*!*INFO.JS*!*INFO.PNL_ID*!*SCAN.SEQUENCE*!*OPER.OPERATION*!*SUM(SCAN.QTY_SCANNED) as QTY_SCANNED*!*INFO.QTY_REQ","","INFO.JOB,INFO.SUFFIX,INFO.JS,INFO.PNL_ID,SCAN.SEQUENCE,OPER.OPERATION,INFO.QTY_REQ","INFO.PNL_ID desc, SCAN.SEQUENCE asc","dtCrateImport",True)
+F.Data.Linq.Join(V.Enum.LinqJoinType!LeftJoin,V.Enum.LinqSourceType!DataTable,"dtPANELINFO*!*INFO",V.Enum.LinqSourceType!DataTable,"dtPANELCRATE*!*SCAN","INFO.PNL_ID = SCAN.PNL_ID",V.Enum.LinqSourceType!DataTable,"dtJOBOPERATIONS*!*OPER","INFO.JS = OPER.JS and SCAN.SEQUENCE = OPER.SEQ","INFO.JOB*!*INFO.SUFFIX*!*INFO.JS*!*INFO.PNL_ID*!*SCAN.SEQUENCE*!*OPER.OPERATION*!*SCAN.QTY_SCANNED*!*INFO.QTY_REQ","","","INFO.PNL_ID desc, SCAN.SEQUENCE asc","dtPanelImport$dtChildImport",True)
+
+F.Data.DataTable.Close("dtPANELINFO")
+F.Data.DataTable.Close("dtPANELCRATE")
+F.Data.DataTable.Close("dtJOBOPERATIONS")
+
+F.Data.DataView.Create("dtPanelImport$dtChildImport","dvNullFix",22,"isnull(QTY_SCANNED, -999.99) = -999.99","")
+F.Data.DataView.SetValue("dtPanelImport$dtChildImport","dvNullFix",-1,"QTY_SCANNED",0)
+F.Data.DataView.Close("dtPanelImport$dtChildImport","dvNullFix")
+
+'F.Data.DataTable.Merge("dtCrateImport", "dtPanelImport$dtChildImport", True,2)
+F.Data.DataTable.AcceptChanges("dtPanelImport$dtChildImport")
+
+
+V.Global.bLoadData.Set(True)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadPanelInfoGrid.End
+
+Program.Sub.FormatPanelInfoGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sDefault.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+
+gui.f_Main.lblWaitDialog.Caption("Formatting Panel Review Information...")
+'F.Intrinsic.UI.ChangeWaitStatus("Formatting Panel Review Information...")
+
+Gui.f_Main.GsGcPnlInfo.AddGridviewFromDatatable("gvPanelImport", "dtPanelImport")
+V.Local.sGV.Set("gvPanelImport")
+
+Gui.f_Main.GsGcPnlInfo.SetGridviewProperty(V.Local.sGV, "AllowSort", True)
+Gui.f_Main.GsGcPnlInfo.SetGridviewProperty(V.Local.sGV, "AllowFilter", True)
+Gui.f_Main.GsGcPnlInfo.SetGridviewProperty(V.Local.sGV, "OptionsViewShowGroupPanel", False)
+Gui.f_Main.GsGcPnlInfo.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+Gui.f_Main.GsGcPnlInfo.SetGridviewProperty(v.Local.sGV, "Multiselect", False)
+Gui.f_Main.GsGcPnlInfo.SetGridviewProperty(V.Local.sGV, V.Enum.GridViewPropertyNames!FindAlwaysVisible, True)
+Gui.f_Main.GsGcPnlInfo.SetGridviewPrintOptions(V.Local.sGV, "printdetails", True)
+
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "JS", "Visible", False)
+
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, "Job")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, "Suffix")
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "JOB", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty(V.Local.sGV, "SUFFIX", V.Local.sProperty, V.Local.sDefault)
+
+
+Gui.f_Main.GsGcPnlInfo.AddGridviewFromDatatable("gvChildImport", "dtPanelImport$dtChildImport")
+Gui.f_Main.GsGcPnlInfo.SetGridviewPrintOptions("gvChildImport", "printdetails", True)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "JOB", "Visible", False)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "SUFFIX", "Visible", False)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "JS", "Visible", False)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "SEQUENCE", V.Local.sProperty, "Sequence")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "OPERATION", V.Local.sProperty, "Operation")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "PNL_ID", V.Local.sProperty, "Panel ID")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_SCANNED", V.Local.sProperty, "Quantity Scanned")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_REQ", V.Local.sProperty, "Quantity Required")
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_SCANNED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_REQ", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_SCANNED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_REQ", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_SCANNED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_REQ", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "SEQUENCE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "OPERATION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "PNL_ID", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_SCANNED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_REQ", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+V.Local.sDefault.Set("#,###,###,##0.00")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_SCANNED", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "QTY_REQ", V.Local.sProperty, V.Local.sDefault)
+
+
+Gui.f_Main.GsGcPnlInfo.AddStyleFormatCondition("gvChildImport","QTY_SCANNED", "ParentRed", "Expression", "[QTY_SCANNED] < [QTY_REQ]")
+Gui.f_Main.GsGcPnlInfo.SetStyleFormatConditionProperty("gvChildImport", "QTY_SCANNED", "ParentRed", "BackColor", V.Enum.ThemeColors!ColorRed.Highlight)
+Gui.f_Main.GsGcPnlInfo.SetStyleFormatConditionProperty("gvChildImport", "QTY_SCANNED", "ParentRed", "ApplyToRow", True)
+
+Gui.f_Main.GsGcPnlInfo.AddStyleFormatCondition("gvChildImport","QTY_SCANNED", "ParentBlue", "Expression", "[QTY_SCANNED] > [QTY_REQ]")
+Gui.f_Main.GsGcPnlInfo.SetStyleFormatConditionProperty("gvChildImport", "QTY_SCANNED", "ParentBlue", "BackColor", V.Enum.ThemeColors!ColorBlue.Highlight)
+Gui.f_Main.GsGcPnlInfo.SetStyleFormatConditionProperty("gvChildImport", "QTY_SCANNED", "ParentBlue", "ApplyToRow", True)
+
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "PNL_ID", "SortOrder", "Ascending")
+Gui.f_Main.GsGcPnlInfo.SetColumnProperty("gvChildImport", "SEQUENCE", "SortOrder", "Ascending")
+
+F.Intrinsic.Control.If(V.DataTable.dtPanelImport.RowCount--, >, -1)
+	Gui.f_Main.GsGcPnlInfo.AddRelation("gvPanelImport","gvChildImport", "JOB*!*SUFFIX", "JOB*!*SUFFIX", "JobSuffRel3")
+F.Intrinsic.Control.EndIf
+
+Gui.f_Main.GsGcPnlInfo.MainView("gvPanelImport")
+
+Gui.f_Main.lblWaitDialog.Visible(False)
+Gui.f_Main.lblWaitDialog.Caption("")
+'F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatPanelInfoGrid.End
+
+Program.Sub.GsGcPanel_RowClick.Start
+F.Intrinsic.Control.Try
+V.Local.dShippedDate.Declare(Date)
+V.Local.fQty.Declare(Float)
+V.Local.iCnt.Declare(Long)
+V.Local.iRow.Declare(Long)
+V.Local.iShipmentID.Declare(Long)
+V.Local.sCrateNo.Declare(String)
+V.Local.sCRTWorkCenters.Declare(String)
+V.Local.sDefault.Declare(String)
+V.Local.sFinish.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sJS.Declare(String)
+V.Local.sJSList.Declare(String)
+V.Local.sOperation.Declare(String)
+V.Local.sPanel.Declare(String)
+V.Local.sProperty.Declare(String)
+V.Local.sRelation.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSEQ.Declare(String)
+V.Local.sShipmentID.Declare(String)
+V.Local.sShippedDate.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sSelGV.Declare(String)
+
+F.Intrinsic.Control.BlockEvents
+
+Gui.f_Main.GsGcPanel.GetFocusedGridview(V.Local.sSelGV)
+
+
+F.Intrinsic.Control.If(V.Local.sSelGV.Trim, =, "DTCHILDINFO")
+	F.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtCrateInfo.RowCount--,>,-1)
+
+	F.Data.DataTable.DeleteRow("dtCrateInfo$dtChildCrateInfo")
+	F.Data.DataTable.DeleteRow("dtCrateInfo")
+F.Intrinsic.Control.EndIf
+V.Local.iRow.Set(V.Args.RowIndex)
+
+Gui.f_Main.GsGcPanel.GetCellValueByColumnName("gvPanels", "JOB", V.Local.iRow, V.Local.sJob)
+Gui.f_Main.GsGcPanel.GetCellValueByColumnName("gvPanels", "SUFFIX", V.Local.iRow, V.Local.sSuffix)
+Gui.f_Main.GsGcPanel.GetCellValueByColumnName("gvPanels", "JS", V.Local.iRow, V.Local.sJS)
+
+F.Intrinsic.String.Build("SELECT JOB, SUFFIX, CRATE_NO, IF(SHIPMENT_ID IS NULL, 0, SHIPMENT_ID) AS SHIPMENT_ID, IF(SHIPPED_DATE IS NULL, '1900-01-01', SHIPPED_DATE) AS SHIPPED_DATE, SUM(QTY) AS QTY_CRATED FROM GCG_6232_PANEL_CRATE WHERE JOB = '{0}' AND SUFFIX = '{1}' GROUP BY JOB, SUFFIX, CRATE_NO, SHIPMENT_ID, SHIPPED_DATE ORDER BY SHIPMENT_ID, CRATE_NO" , V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.Local.sSQL)
+
+F.Intrinsic.Control.If(v.DataTable.dtTempCrate.Exists)
+	F.Data.DataTable.Close("dtTempCrate")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtTempCrate", "con", V.Local.sSQL, True)
+
+f.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtTempCrate.RowCount--,1)
+	V.Local.sCrateNo.Set(V.DataTable.dtTempCrate(V.Local.iCnt).CRATE_NO!FieldValTrim)
+	V.Local.iShipmentID.Set(V.DataTable.dtTempCrate(V.Local.iCnt).SHIPMENT_ID!FieldVal)
+	V.Local.dShippedDate.Set(V.DataTable.dtTempCrate(V.Local.iCnt).SHIPPED_DATE!FieldVal)
+	V.Local.fQty.Set(V.DataTable.dtTempCrate(V.Local.iCnt).QTY_CRATED!FieldVal)
+	
+	F.Data.DataTable.AddRow("dtCrateInfo", "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim, "JS", V.Local.sJS.Trim,"CRATE_NO", V.Local.sCrateNo, "SHIPMENT_ID", V.Local.iShipmentID, "SHIPMENT_DATE", V.Local.dShippedDate.PervasiveDate, "QTY_CRATED", V.Local.fQty)
+f.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Intrinsic.Control.If(V.DataTable.dtCrateInfo.RowCount--,>,-1)
+	F.Intrinsic.Control.For(V.Local.iCnt,0, V.DataTable.dtCrateInfo.RowCount--,1)
+		F.Intrinsic.Control.If(V.Local.iCnt,=,0)
+			V.Local.sJSList.Set(V.DataTable.dtCrateInfo(V.Local.iCnt).JS!FieldValTrim)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}','{1}", V.Local.sJSList.Trim, V.DataTable.dtCrateInfo(V.Local.iCnt).JS!FieldValTrim, V.Local.sJSList)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.String.Build("SELECT A.JOB, A.SUFFIX, (ltrim(rtrim(A.JOB)) + ltrim(rtrim(A.SUFFIX))) AS 'JS', A.SEQUENCE, B.PART, A.PNL_ID, A.FINISH, A.CRATE_NO, IF(A.SHIPMENT_ID IS NULL, 0, A.SHIPMENT_ID) AS SHIPMENT_ID, A.QTY FROM GCG_6232_PANEL_CRATE A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.SEQUENCE = B.SEQ WHERE JS IN ('{0}') ORDER BY A.SEQUENCE, A.PNL_ID", V.Local.sJSList, V.Local.sSQL)
+F.Intrinsic.Control.If(V.DataTable.dtTempChildCrate.Exists)
+	F.Data.DataTable.Close("dtTempChildCrate")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtTempChildCrate", "con", V.Local.sSQL)
+
+F.Intrinsic.Control.For(V.Local.iCnt,0, V.DataTable.dtTempChildCrate.RowCount--,1)
+	V.Local.sJob.Set(V.DataTable.dtTempChildCrate(V.Local.iCnt).JOB!FieldValTrim)
+	V.Local.sSuffix.Set(V.DataTable.dtTempChildCrate(V.Local.iCnt).SUFFIX!fieldValTrim)
+	V.Local.sSEQ.Set(V.DataTable.dtTempChildCrate(V.Local.iCnt).SEQUENCE!FieldValTrim)
+	V.Local.sOperation.Set(V.DataTable.dtTempChildCrate(V.Local.iCnt).PART!FieldValTrim)
+	V.Local.sPanel.Set(V.DataTable.dtTempChildCrate(V.Local.iCnt).PNL_ID!FieldValTrim)
+	V.Local.sFinish.Set(V.DataTable.dtTempChildCrate(V.Local.iCnt).FINISH!FieldValTrim)
+	V.Local.fQty.Set(V.DataTable.dtTempChildCrate(V.Local.iCnt).QTY!FieldVal)
+	
+	F.Data.DataTable.AddRow("dtCrateInfo$dtChildCrateInfo", "JOB", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim,"CRATE_NO", V.DataTable.dtTempChildCrate(V.Local.iCnt).CRATE_NO!FieldValTrim,"SHIPMENT_ID", V.DataTable.dtTempChildCrate(V.Local.iCnt).SHIPMENT_ID!FieldVal, "SEQUENCE", V.Local.sSEQ.Trim, "OPERATION", V.Local.sOperation.Trim, "PNL_ID", V.Local.sPanel.Trim, "FINISH", V.Local.sFinish.Trim, "QTY", V.Local.fQty)
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Intrinsic.Control.UnBlockEvents
+
+Gui.f_Main.GsGcCrate.MainView("gvCrate")
+
+V.Global.bLoadData.Set(True)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcPanel_RowClick.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.sFilePath.Declare(String)
+V.Local.sFQP.Declare(String)
+
+
+F.Intrinsic.Control.BlockEvents
+
+
+F.Intrinsic.UI.FolderBrowser("Select Export Save Location", V.Local.sFilePath)
+F.Intrinsic.Control.If(V.Local.sFilePath.Trim,<>,"***CANCEL***", "OR", V.Local.sFilePath.Trim,<>,"")
+	
+	F.Intrinsic.Control.If(V.DataTable.dtPanels.RowCount--,>,-1)
+		Gui.f_Main.GsGcPanel.Visible(False)
+		F.Intrinsic.Control.For(V.Local.iCnt,0, V.DataTable.dtPanels.RowCount--,1)
+			Gui.f_Main.GsGcPanel.ExpandMasterRow("gvPanels", V.Local.iCnt)
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		
+		F.Intrinsic.String.Build("{0}\PanelReview_ScanExport_{1}.xlsx", V.Local.sFilePath, V.Ambient.Date.FormatMMDDYYYY,V.Local.sFQP)
+		Gui.f_Main.GsGcPanel.Export(V.Local.sFQP, "xlsx")
+		
+		F.Intrinsic.Control.For(V.Local.iCnt,0, V.DataTable.dtPanels.RowCount--,1)
+			Gui.f_Main.GsGcPanel.CollapseMasterRow("gvPanels", V.Local.iCnt)
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		Gui.f_Main.GsGcPanel.Visible(True)
+	F.Intrinsic.Control.EndIf
+
+	
+	F.Intrinsic.Control.If(V.DataTable.dtCrateInfo.RowCount--,>,-1)
+		Gui.f_Main.GsGcCrate.Visible(False)
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtCrateInfo.RowCount--,1)
+			Gui.f_Main.GsGcCrate.ExpandMasterRow("gvCrate", V.Local.iCnt)
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		F.Intrinsic.String.Build("{0}\PanelReview_CrateExport_{1}.xlsx", V.Local.sFilePath, V.Ambient.Date.FormatMMDDYYYY,V.Local.sFQP)
+	
+		Gui.f_Main.GsGcCrate.Export(V.Local.sFQP, "xlsx")
+		
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtCrateInfo.RowCount--,1)
+			Gui.f_Main.GsGcCrate.CollapseMasterRow("gvCrate", V.Local.iCnt)
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		Gui.f_Main.GsGcCrate.Visible(True)
+	F.Intrinsic.Control.EndIf
+
+	
+	F.Intrinsic.Control.If(V.DataTable.dtPanelImport.RowCount--,>,-1)
+		Gui.f_Main.GsGcPnlInfo.Visible(False)
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtPanelImport.RowCount--,1)
+			Gui.f_Main.GsGcPnlInfo.ExpandMasterRow("gvPanelImport", V.Local.iCnt)
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		
+		F.Intrinsic.String.Build("{0}\PanelReview_PNLInfoExport_{1}.xlsx", V.Local.sFilePath, V.Ambient.Date.FormatMMDDYYYY,V.Local.sFQP)
+		Gui.f_Main.GsGcPnlInfo.Export(V.Local.sFQP, "xlsx")
+		
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtPanelImport.RowCount--,1)
+			Gui.f_Main.GsGcPnlInfo.CollapseMasterRow("gvPanelImport", V.Local.iCnt)
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		Gui.f_Main.GsGcPnlInfo.Visible(True)
+	F.Intrinsic.Control.EndIf
+	
+	
+	F.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.UI.Msgbox("Panel Review Grid Successfully Exported", "Success")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+V.Local.sSerialize.Declare(String)
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvPanels",6232,0,5,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 6232 And Seq < 1000;")
+	F.ODBC.Connection!common.Close
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode, "gvPanels",6232,1001,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	Gui.f_Main.GsGcPanel.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvCrate",6232,0,5,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 6232 And Seq < 1000;")
+	F.ODBC.Connection!common.Close
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode, "gvCrate",6232,1001,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	Gui.f_Main.GsGcCrate.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvPanelImport",6232,0,5,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 6232 And Seq < 1000;")
+	F.ODBC.Connection!common.Close
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode, "gvPanelImport",6232,1001,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	Gui.f_Main.GsGcPnlInfo.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+V.Local.sSerialize.Declare(String)
+
+Gui.f_Main.GsGcPanel.Serialize("gvPanels", V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvPanels",6232,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+Gui.f_Main.GsGcCrate.Serialize("gvCrate", V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvCrate",6232,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+Gui.f_Main.GsGcPnlInfo.Serialize("gvPanelImport", V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvPanelImport",6232,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Global.bLoadData,=,True)
+	F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.EndIf
+
+'close the connection to the database
+F.ODBC.Connection!con.Close
+
+'end the script
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Review Dashboard", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Unload.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+'optional unattended parameters, those subs may not exist if not using them but won't be called
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Global.bError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+V.Global.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("UNATTENDED", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Control.If(V.Args.UNATTENDED)
+		F.Intrinsic.Control.CallSub(UnattendedErrorMessage, "MESSAGE", V.Local.sError, "PROJECT", V.Args.PROJECT, "PROJECTTITLE", V.Args.PROJECTTITLE)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.chkAllDates_Click.Start
+F.Intrinsic.Control.Try
+
+Gui.f_Main.dtpBegDate.Enabled(V.Screen.f_Main!chkAllDates.CheckedAsBoolean.Not)
+Gui.f_Main.dtpEndDate.Enabled(V.Screen.f_Main!chkAllDates.CheckedAsBoolean.Not)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.chkAllDates_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8315.16327$}$1
+${$6$}$bbaker$}$20221111093716611$}$pM7xsHplA2E9VCTenDTJ47gi1rF/t66WBwLBGealEffWjGdBtEPziMNGR4uQXyRVNzz/Xh69MK0=
+Program.Sub.Comments.End
