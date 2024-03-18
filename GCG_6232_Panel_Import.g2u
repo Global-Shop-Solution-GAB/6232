@@ -1,0 +1,410 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_Main..Create(BaseForm)
+Gui.f_Main..Caption("Panel File Import (6232)")
+Gui.f_Main..Size(409,194)
+Gui.f_Main..MinX(0)
+Gui.f_Main..MinY(0)
+Gui.f_Main..Position(0,0)
+Gui.f_Main..AlwaysOnTop(False)
+Gui.f_Main..FontName("Tahoma")
+Gui.f_Main..FontSize(8.25)
+Gui.f_Main..ControlBox(True)
+Gui.f_Main..MaxButton(False)
+Gui.f_Main..MinButton(True)
+Gui.f_Main..MousePointer(0)
+Gui.f_Main..Moveable(True)
+Gui.f_Main..Sizeable(False)
+Gui.f_Main..ShowInTaskBar(True)
+Gui.f_Main..TitleBar(True)
+Gui.f_Main..Event(UnLoad,Unload)
+Gui.f_Main.txtFileName.Create(TextBox,"",True,366,18,0,8,69,False,0,"Tahoma",7.8,,1)
+Gui.f_Main.cmdImport.Create(Button)
+Gui.f_Main.cmdImport.Enabled(False)
+Gui.f_Main.cmdImport.Visible(True)
+Gui.f_Main.cmdImport.Zorder(0)
+Gui.f_Main.cmdImport.Size(72,29)
+Gui.f_Main.cmdImport.Position(325,130)
+Gui.f_Main.cmdImport.Caption("Import")
+Gui.f_Main.cmdImport.FontName("Tahoma")
+Gui.f_Main.cmdImport.FontSize(8)
+Gui.f_Main.cmdImport.Event(Click,cmdImport_Click)
+Gui.f_Main.lblFileName.Create(Label,"Select File for Import:",True,104,13,0,8,51,True,0,"Tahoma",8,,0,0)
+Gui.f_Main.lblFileName.BorderStyle(0)
+Gui.f_Main.cmdCancel.Create(Button)
+Gui.f_Main.cmdCancel.Enabled(True)
+Gui.f_Main.cmdCancel.Visible(True)
+Gui.f_Main.cmdCancel.Zorder(0)
+Gui.f_Main.cmdCancel.Size(72,29)
+Gui.f_Main.cmdCancel.Position(8,130)
+Gui.f_Main.cmdCancel.Caption("Cancel")
+Gui.f_Main.cmdCancel.FontName("Tahoma")
+Gui.f_Main.cmdCancel.FontSize(8)
+Gui.f_Main.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.f_Main.cmdBrowse.Create(Button)
+Gui.f_Main.cmdBrowse.Enabled(False)
+Gui.f_Main.cmdBrowse.Visible(True)
+Gui.f_Main.cmdBrowse.Zorder(0)
+Gui.f_Main.cmdBrowse.Size(21,22)
+Gui.f_Main.cmdBrowse.Position(376,67)
+Gui.f_Main.cmdBrowse.Caption("^")
+Gui.f_Main.cmdBrowse.FontName("Tahoma")
+Gui.f_Main.cmdBrowse.FontSize(7.8)
+Gui.f_Main.cmdBrowse.Event(Click,cmdBrowse_Click)
+Gui.f_Main.lblJob.Create(Label,"Work Order:",True,60,13,0,8,4,True,0,"Tahoma",8,,0,0)
+Gui.f_Main.lblJob.BorderStyle(0)
+Gui.f_Main.txtJob.Create(TextBox,"",True,126,18,0,8,21,True,0,"Tahoma",7.8,,1)
+Gui.f_Main.cmdJobBrowser.Create(Button)
+Gui.f_Main.cmdJobBrowser.Enabled(True)
+Gui.f_Main.cmdJobBrowser.Visible(True)
+Gui.f_Main.cmdJobBrowser.Zorder(0)
+Gui.f_Main.cmdJobBrowser.Size(21,22)
+Gui.f_Main.cmdJobBrowser.Position(138,19)
+Gui.f_Main.cmdJobBrowser.Caption("^")
+Gui.f_Main.cmdJobBrowser.FontName("Tahoma")
+Gui.f_Main.cmdJobBrowser.FontSize(7.8)
+Gui.f_Main.cmdJobBrowser.Event(Click,cmdJobBrowser_Click)
+Gui.f_Main.chkOverride.Create(CheckBox)
+Gui.f_Main.chkOverride.Enabled(True)
+Gui.f_Main.chkOverride.Visible(True)
+Gui.f_Main.chkOverride.Zorder(0)
+Gui.f_Main.chkOverride.Size(183,20)
+Gui.f_Main.chkOverride.Position(8,97)
+Gui.f_Main.chkOverride.Caption("Override Previous Upload")
+Gui.f_Main.chkOverride.FontName("Tahoma")
+Gui.f_Main.chkOverride.FontSize(8.25)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bError.Declare(Boolean)
+V.Global.bUnattended.Declare(Boolean)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+V.Local.sNewScriptBtns.Declare(String)
+V.Local.sScriptButtons.Declare(String)
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+'open a connection to the db
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+
+'Check to see if the populate hook for the main SFDC.net screen is firing. If so, set the script 3 button to Panel Import
+F.Intrinsic.Control.If(V.Caller.Hook,=,49710)
+
+	V.Local.sScriptButtons.Set(V.Passed.MainFormView-windowsUIButtonPanel-1)
+	F.Intrinsic.String.Replace(V.Local.sScriptButtons, V.Ambient.NewLine, " ", V.Local.sScriptButtons)
+	F.Intrinsic.String.Split(V.Local.sScriptButtons, "|~|", V.Local.sScriptButtons)
+	F.Intrinsic.String.Build("Panel File Import|~|Panel Review Dashboard|~|{0}", V.Local.sScriptButtons(2).Trim, V.Local.sNewScriptBtns)
+	V.Passed.MainFormView-windowsUIButtonPanel-1.Set(V.Local.sNewScriptBtns)
+	F.Intrinsic.Control.CallSub(Unload)
+'if the user clicks the script 3 button
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=, 49762)
+	Gui.f_Main..Show
+'if the script is firing from the menu item
+F.Intrinsic.Control.Else
+	Gui.f_Main..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel ID Import", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.cmdJobBrowser_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sJob.Declare(String)
+V.Local.sJobSuff.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSuffix.Declare(String)
+
+'open the Work Order Common Browser
+F.Intrinsic.UI.CommonBrowser(1000, "", V.Local.sRet)
+
+'check to make sure the user didn't exit out of the browser
+F.Intrinsic.Control.If(V.Local.sRet,<>, "***CANCEL***")
+	'split the work order information passed back from the browser
+	F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+	'set the job and suffix
+	V.Local.sJob.Set(V.Local.sRet(0).Trim)
+	V.Local.sSuffix.Set(V.Local.sRet(1).Trim)
+	'build the work order number
+	F.Intrinsic.String.Build("{0}-{1}", V.Local.sJob.Trim, V.Local.sSuffix.Trim, V.Local.sJobSuff)
+	'set the screen text box to the work order built
+	Gui.f_Main.txtJob.Text(V.Local.sJobSuff)
+	Gui.f_Main.txtFileName.Enabled(True)
+	Gui.f_Main.cmdBrowse.Enabled(True)
+	Gui.f_Main.cmdImport.Enabled(True)
+'if the user does exit out of the browser, inform the user that the field is required
+F.Intrinsic.Control.ElseIf(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.UI.Msgbox("You must select a Work Order before you can continue.", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel ID Import", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdJobBrowser_Click.End
+
+Program.Sub.cmdBrowse_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sFileDir.Declare(String)
+V.Local.sFileName.Declare(String)
+
+F.Intrinsic.String.Build("{0}", V.Caller.GlobalDir, V.Local.sFileDir)
+'allow the user to browse for file on computer
+F.Intrinsic.UI.ShowOpenFileDialog(V.Local.sFileDir, "*.csv", V.Local.sFileName)
+F.Intrinsic.Control.If(V.Local.sFileName,<>, "***CANCEL***")
+	Gui.f_Main.txtFileName.Text(V.Local.sFileName.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel ID Import", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowse_Click.End
+
+Program.Sub.cmdImport_Click.Start
+F.Intrinsic.Control.Try
+V.Local.bCSV.Declare(Boolean)
+V.Local.bOverride.Declare(Boolean)
+V.Local.iCnt.Declare(Long)
+V.Local.iCnt2.Declare(Long)
+V.Local.iCol.Declare(Long)
+V.Local.sColName.Declare(String)
+V.Local.sFileName.Declare(String)
+V.Local.sFileData.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sPanelInfo.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sSplitPanel.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sWorkOrder.Declare(String)
+V.Local.sImportJob.Declare(String)
+V.Local.sProject.Declare(String)
+V.Local.sGSSJob.Declare(String)
+V.Local.sGSSSuffix.Declare(String)
+
+V.Local.bOverride.Set(V.Screen.f_Main!chkOverride.Value)
+
+'set the name of the file they selected
+V.Local.sFileName.Set(V.Screen.f_Main!txtFileName.Text)
+'check to make sure the file is a csv
+F.Intrinsic.String.IsInString(V.Local.sFileName, ".csv", True, V.Local.bCSV)
+
+'set the work order number they entered
+V.Local.sWorkOrder.Set(V.Screen.f_Main!txtJob.Text)
+F.Intrinsic.String.Split(V.Local.sWorkOrder, "-", V.Local.sWorkOrder)
+V.Local.sJob.Set(V.Local.sWorkOrder(0).Trim)
+V.Local.sSuffix.Set(V.Local.sWorkOrder(1).Trim)
+V.Local.sGSSJob.Set(V.Local.sJob.Trim)
+V.Local.sGSSSuffix.Set(V.Local.sSuffix.Trim)
+
+'F.Intrinsic.UI.InvokeWaitDialog("Importing Panel ID File...", "Please Wait")
+'check to make sure the file name field is not empty
+F.Intrinsic.Control.If(V.Local.sFileName.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("You must select a file before you can run the import!", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	'check to make sure the file is a csv. If it's not, inform the user 
+	F.Intrinsic.Control.If(V.Local.bCSV,=,False)
+		F.Intrinsic.UI.Msgbox("The Import File must be a CSV", "Invaid File Type")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else	
+		F.Intrinsic.Control.If(V.DataTable.dtFileImport.Exists)
+			F.Data.DataTable.Close("dtFileImport")
+		F.Intrinsic.Control.EndIf
+		'create the datatable
+		
+		F.Data.DataTable.Create("dtFileImport", True)
+		F.Data.DataTable.AddColumn("dtFileImport", "Job", "String")
+		F.Data.DataTable.AddColumn("dtFileImport", "Suffix", "String")
+		F.Data.DataTable.AddColumn("dtFileImport", "PNL", "String")
+		F.Data.DataTable.AddColumn("dtFileImport", "Qty", "Long")
+		F.Data.DataTable.AddColumn("dtFileImport", "Finish", "String")
+		F.Data.DataTable.AddColumn("dtFileImport", "SO Height", "String")
+		F.Data.DataTable.AddColumn("dtFileImport", "SO Width", "String")
+		F.Data.DataTable.AddColumn("dtFileImport", "Area[sq inch]", "String")
+		F.Data.DataTable.AddColumn("dtFileImport", "Date_Created", "Date")
+		
+		F.Intrinsic.File.File2String(V.Local.sFileName, V.Local.sFileData)
+		F.Intrinsic.String.Split(V.Local.sFileData, V.Ambient.NewLine, V.Local.sFileData)
+		
+		'start at 11 to bypass all of the information above
+		F.Intrinsic.Control.For(v.Local.iCnt, 11, V.Local.sFileData.UBound,1)
+			V.Local.sPanelInfo.Set(V.Local.sFileData(V.Local.iCnt).Trim)
+			F.Intrinsic.Control.If(V.Local.sPanelInfo,<>,"")
+				F.Intrinsic.String.SplitCSV(v.Local.sPanelInfo.Trim, V.Local.sSplitPanel)
+				F.Data.DataTable.AddRow("dtFileImport", "PNL", V.Local.sSplitPanel(0).Trim, "Qty", V.Local.sSplitPanel(1).Trim, "Finish", V.Local.sSplitPanel(2).Trim, "SO Height", V.Local.sSplitPanel(3).Trim, "SO Width", V.Local.sSplitPanel(4).Trim, "Area[sq inch]", V.Local.sSplitPanel(5).Trim)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Data.DataTable.RemoveColumn("dtFileImport", "SO Height")
+		F.Data.DataTable.RemoveColumn("dtFileImport", "SO Width")
+		F.Data.DataTable.RemoveColumn("dtFileImport", "Area[sq inch]")
+		F.Data.DataTable.SetValue("dtFileImport", -1, "Job", V.Local.sJob.Trim, "Suffix", V.Local.sSuffix.Trim, "Date_Created", V.Ambient.Date.PervasiveDate)
+		
+		F.Intrinsic.Control.If(V.DataTable.dtFileInfo.Exists)
+			F.Data.DataTable.Close("dtFileInfo")
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.Create("dtFileInfo", True)
+		
+		F.Intrinsic.Control.For(V.Local.iCnt2,0, 9, 1)
+			V.Local.sPanelInfo.Set(V.Local.sFileData(V.Local.iCnt2).Trim)
+			F.Intrinsic.String.Replace(V.Local.sPanelInfo, ",", " ", V.Local.sPanelInfo)
+			F.Intrinsic.Control.If(V.Local.sPanelInfo.Trim,<>,"")
+				F.Intrinsic.Control.If(V.Local.iCnt2,=,0)
+					V.Local.iCol.Set(1)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Math.Add(V.Local.iCol,1,V.Local.iCol)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.String.Build("Col{0}", V.Local.iCol, V.Local.sColName)
+				F.Data.DataTable.AddColumn("dtFileInfo", V.Local.sColName, "String")
+				F.Data.DataTable.AddRow("dtFileInfo", V.Local.sColName, "")
+				F.Data.DataTable.SetValue("dtFileInfo", -1, V.Local.sColName, V.Local.sPanelInfo)
+			F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.Next(V.Local.iCnt2)
+		
+		
+		F.Intrinsic.Control.For(V.Local.iCnt2, V.DataTable.dtFileInfo.RowCount--,1,-1)
+			F.Data.DataTable.DeleteRow("dtFileInfo", V.Local.iCnt2)
+			
+		F.Intrinsic.Control.Next(V.Local.iCnt2)
+		F.Data.DataTable.AcceptChanges("dtFileInfo")
+		
+		F.Data.DataTable.AddColumn("dtFileInfo", "SUFFIX", "STRING")
+		
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtFileInfo.RowCount--, 1)
+			F.Intrinsic.String.Replace(V.DataTable.dtFileInfo(V.Local.iCnt).COL4!FieldValTrim, "Job #:", "", V.Local.sWorkOrder)
+			F.Intrinsic.String.Split(V.Local.sWorkOrder, "-", V.Local.sWorkOrder)
+			V.Local.sJob.Set(V.Local.sWorkOrder(0).Trim)
+			V.Local.sSuffix.Set(V.Local.sWorkOrder(1).Trim)
+			F.Data.DataTable.SetValue("dtFileInfo", V.Local.iCnt, "COL4", V.Local.sJob.Trim, "SUFFIX", V.Local.sSuffix.Trim)
+			
+			F.Intrinsic.String.Replace(V.DataTable.dtFileInfo(V.Local.iCnt).COL3!FieldValTrim, "Project Name:", "", V.Local.sProject)
+			F.Data.DataTable.SetValue("dtFileInfo", V.Local.iCnt, "COL3", V.Local.sProject.Trim)
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		
+		'check to see if the override previous upload checkbox has been checked. 
+		'If it hasn't, add to db
+		'if it has override previous records
+		F.Intrinsic.Control.If(V.Local.bOverride,=,True)
+			'DELETE FROM PANEL INFO TABLE WHERE JOB SUFFIX 
+			
+			F.Intrinsic.String.Build("DELETE FROM GCG_6232_PANEL_INFO WHERE JOB = '{0}' AND SUFFIX = '{1}'", V.Local.sGSSJob.Trim, V.Local.sGSSSuffix.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Data.DataTable.SaveToDB("dtFileImport", "con", "GCG_6232_PANEL_INFO", "JOB*!*SUFFIX*!*PNL", 128, "JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*PNL@!@PNL*!*QTY@!@QTY*!*FINISH@!@FINISH*!*DATE_CREATED@!@DATE_CREATED")
+		
+			F.Data.DataTable.SaveToDB("dtFileInfo", "con", "GCG_6232_Import_Info", "COL4", 256, "COL1@!@COMPANY*!*COL2@!@IMPORT_NAME*!*COL3@!@PROJECT*!*COL4@!@JOB*!*COL5@!@RELEASE_INFO*!*COL6@!@RELEASED_BY*!*COL7@!@IMPORT_DATE*!*COL8@!@TOTAL_PANELS*!*SUFFIX@!@SUFFIX")
+		F.Intrinsic.Control.ElseIf(V.Local.bOverride,=,False)
+			F.Data.DataTable.SaveToDB("dtFileImport", "con", "GCG_6232_PANEL_INFO", "JOB*!*SUFFIX*!*PNL", 256, "JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*PNL@!@PNL*!*QTY@!@QTY*!*FINISH@!@FINISH*!*DATE_CREATED@!@DATE_CREATED")
+		
+			F.Data.DataTable.SaveToDB("dtFileInfo", "con", "GCG_6232_Import_Info", "COL4", 128, "COL1@!@COMPANY*!*COL2@!@IMPORT_NAME*!*COL3@!@PROJECT*!*COL4@!@JOB*!*COL5@!@RELEASE_INFO*!*COL6@!@RELEASED_BY*!*COL7@!@IMPORT_DATE*!*COL8@!@TOTAL_PANELS*!*SUFFIX@!@SUFFIX")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.UI.CloseWaitDialog
+
+Gui.f_Main.txtJob.Text("")
+Gui.f_Main.txtFileName.Text("")
+Gui.f_Main.txtFileName.Enabled(False)
+Gui.f_Main.cmdBrowse.Enabled(False)
+Gui.f_Main.chkOverride.Value(False)
+
+'F.Intrinsic.UI.SleepMS(200)
+F.Intrinsic.UI.Msgbox("Panel File Import Successful.", "Success")
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel ID Import", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdImport_Click.End
+
+Program.Sub.cmdCancel_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(Unload)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try
+
+'close the connection to the database
+F.ODBC.Connection!con.Close
+
+'end the script
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6232", "ProjectTitle", "Panel Scanning", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Unload.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+'optional unattended parameters, those subs may not exist if not using them but won't be called
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Global.bError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+V.Global.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("UNATTENDED", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Control.If(V.Args.UNATTENDED)
+		F.Intrinsic.Control.CallSub(UnattendedErrorMessage, "MESSAGE", V.Local.sError, "PROJECT", V.Args.PROJECT, "PROJECTTITLE", V.Args.PROJECTTITLE)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.Comments.Start
+${$5$}$2.2019.1.105$}$1
+${$6$}$acollins$}$20211221121231480$}$h98hERc2yV72q0GaUGlwSaoK/aefTdVk/Cko6kf8J7Jd9TQy1KS+uV5pfxFr2yRq2lbLIYncW+myE/mkEghHww==
+Program.Sub.Comments.End
